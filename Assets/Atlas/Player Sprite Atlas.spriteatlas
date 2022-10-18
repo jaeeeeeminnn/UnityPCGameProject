@@ -6,7 +6,7 @@ SpriteAtlas:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: New Sprite Atlas
+  m_Name: Player Sprite Atlas
   m_EditorData:
     serializedVersion: 2
     textureSettings:
@@ -69,5 +69,5 @@ SpriteAtlas:
   - Unity_Standard_Player (1)_2
   - Unity_Standard_Player (1)_8
   m_RenderDataMap: {}
-  m_Tag: New Sprite Atlas
+  m_Tag: Player Sprite Atlas
   m_IsVariant: 0
