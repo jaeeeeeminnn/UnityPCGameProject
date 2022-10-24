@@ -8,6 +8,9 @@ TextureImporter:
   - first:
       213: -808568495733805208
     second: Unity_Standard_UI_1
+  - first:
+      213: 7826914341745330205
+    second: Unity_Standard_UI_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -170,6 +173,27 @@ TextureImporter:
       bones: []
       spriteID: 86fe633bc3367c4f0800000000000000
       internalID: -808568495733805208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Unity_Standard_UI_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1804230029ce9c60800000000000000
+      internalID: 7826914341745330205
       vertices: []
       indices: 
       edges: []
