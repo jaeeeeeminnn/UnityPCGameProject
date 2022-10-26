@@ -1,16 +1,22 @@
 fileFormatVersion: 2
-guid: 68010f8ac706d0a4f80a9f302410632d
+guid: bc228ec6bd691854c9ba82bfa47731e3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1380862574710413892
-    second: Unity_Standard_UI_0
+      213: 3722290720410359811
+    second: Unity_Standard_UI 1_0
   - first:
-      213: -808568495733805208
-    second: Unity_Standard_UI_1
+      213: 4146617918443080901
+    second: Unity_Standard_UI 1_1
   - first:
-      213: 7826914341745330205
-    second: Unity_Standard_UI_2
+      213: -3409729701443495957
+    second: Unity_Standard_UI 1_2
+  - first:
+      213: 408328500459933106
+    second: Unity_Standard_UI 1_3
+  - first:
+      213: -3746176161160083228
+    second: Unity_Standard_UI 1_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -136,13 +142,76 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Unity_Standard_UI_0
+      name: Unity_Standard_UI 1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 308dacc40bb38a330800000000000000
+      internalID: 3722290720410359811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Unity_Standard_UI 1_1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ccc110f60fbb8930800000000000000
+      internalID: 4146617918443080901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Unity_Standard_UI 1_2
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be79c5de6e43ea0d0800000000000000
+      internalID: -3409729701443495957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Unity_Standard_UI 1_3
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 64
-        height: 64
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,41 +219,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 44ade31123fc92310800000000000000
-      internalID: 1380862574710413892
+      spriteID: 2bd05959b9caaa500800000000000000
+      internalID: 408328500459933106
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Unity_Standard_UI_1
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 86fe633bc3367c4f0800000000000000
-      internalID: -808568495733805208
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Unity_Standard_UI_2
+      name: Unity_Standard_UI 1_4
       rect:
         serializedVersion: 2
         x: 128
         y: 0
-        width: 64
-        height: 64
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,8 +240,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d1804230029ce9c60800000000000000
-      internalID: 7826914341745330205
+      spriteID: 4e8440821a8e20cc0800000000000000
+      internalID: -3746176161160083228
       vertices: []
       indices: 
       edges: []
