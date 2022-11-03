@@ -9,19 +9,17 @@ public class GameManager : MonoBehaviour
 
     public int stageIndex = -1;
 
-    public PlayerController playerController;
-    public GameObject informationText;
+    public GameObject tutorial;
+    public GameObject stageMap;
+    public PlayerController player;
+    public TutorialManager tutorialManager;
 
     // Start is called before the first frame update
     void Start()
     {
         instance = this;
 
-        if(stageIndex == -1)
-        {
-            Tutorial();
-            //StartCoroutine("TutorialRoutine");
-        }
+        isClearTutorial();
     }
 
     // Update is called once per frame
@@ -46,15 +44,25 @@ public class GameManager : MonoBehaviour
         //playerController.enabled = false;
     //}
 
-    public void Tutorial()
+    public void isClearTutorial()
     {
-        Debug.Log("튜토리얼 진입함");
-        playerController.enabled = false;
-        informationText.SetActive(true);
-        playerController.enabled = true;
-        if(Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
+        Debug.Log("튜토리얼 체크 진입함");
+        int tutorialDone = PlayerPrefs.GetInt("TutorialDone");
+        Debug.Log(tutorialDone);
+        if (tutorialDone == 0)
         {
-            informationText.SetActive(false);
+            tutorial.SetActive(true);
+            //PlayerPrefs.SetInt("TutorialDone", 1);
+            return;
         }
+        else
+        {
+            stageMap.SetActive(true);
+            PlayerPrefs.SetInt("TutorialDone", 0);
+            return;
+        }
+
+
+
     }
 }
