@@ -34,7 +34,7 @@ public class TutorialItemController : MonoBehaviour
         {
             if(itemType == ItemType.touch)
             {
-                if(Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
+                if(Input.GetMouseButtonDown(0))
                 {
                     Run();
                 }

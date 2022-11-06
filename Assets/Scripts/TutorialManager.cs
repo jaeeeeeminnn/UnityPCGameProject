@@ -43,7 +43,7 @@ public class TutorialManager : MonoBehaviour
 
         if (itemIndex > -1 && itemIndex < items.Length)
         {
-            items[itemIndex].gameObject.SetActive(false);
+            items[itemIndex].gameObject.SetActive(true);
         }
 
     }
