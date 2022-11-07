@@ -7,11 +7,12 @@ public class TutorialItemController : MonoBehaviour
 
     public enum ItemType
     {
-        touch
+        touch,
+        PressKey
     }
 
     [SerializeField] [Header("따라하기 아이템 종류")] ItemType itemType;
-    [SerializeField] [Header("사용자 입력 대기까지 진행시간")] float timeToInput;
+    [SerializeField] [Header("사용자 입력 대기까지 진행시간")] public float timeToInput;
     [SerializeField] [Header("사용자 입력 대기 시 표시할 게임 오브젝트")] GameObject gameObjectToShow;
 
     bool isReadyToInput = false;
@@ -32,9 +33,9 @@ public class TutorialItemController : MonoBehaviour
     {
         if(isReadyToInput)
         {
-            if(itemType == ItemType.touch)
+            if(itemType == ItemType.PressKey)
             {
-                if(Input.GetMouseButtonDown(0))
+                if(Input.anyKeyDown)
                 {
                     Run();
                 }

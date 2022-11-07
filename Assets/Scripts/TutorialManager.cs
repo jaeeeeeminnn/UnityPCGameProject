@@ -7,9 +7,10 @@ public class TutorialManager : MonoBehaviour
     public PlayerController player;
     //public GameObject informationText;
     public GameManager gameManager;
+    public TimerManager timerManager;
 
     [SerializeField] [Header("Tutorials items")] TutorialItemController[] items;
-    int itemIndex = 0;
+    public int itemIndex = 0;
 
     // Start is called before the first frame update
     void Start()
