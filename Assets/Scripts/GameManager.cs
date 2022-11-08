@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     public GameObject tutorial;
     public GameObject stageMap;
     public PlayerController player;
-    public TutorialManager tutorialManager;
+    public GameObject tutorialManager;
 
     // Start is called before the first frame update
     void Start()
@@ -25,13 +25,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //playerController.enabled = false;
-        //informationText.SetActive(true);
-        //playerController.enabled = true;
-        //if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
-        //{
-            //informationText.SetActive(false);
-        //}
+
     }
 
     public void NextStage()
@@ -52,13 +46,14 @@ public class GameManager : MonoBehaviour
         if (tutorialDone == 0)
         {
             tutorial.SetActive(true);
-            //PlayerPrefs.SetInt("TutorialDone", 1);
+            tutorialManager.SetActive(true);
+            PlayerPrefs.SetInt("TutorialDone", 1);
             return;
         }
         else
         {
             stageMap.SetActive(true);
-            PlayerPrefs.SetInt("TutorialDone", 0);
+            //PlayerPrefs.SetInt("TutorialDone", 0);
             return;
         }
 

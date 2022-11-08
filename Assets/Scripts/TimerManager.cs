@@ -12,8 +12,7 @@ public class TimerManager : MonoBehaviour
 
     private void Awake()
     {
-        time = items[tutorialManager.itemIndex].timeToInput;
-        Debug.Log(time);
+
     }
 
     // Start is called before the first frame update
@@ -28,5 +27,17 @@ public class TimerManager : MonoBehaviour
     {
         time -= Time.deltaTime;
         text_time.text = ((int)time % 60).ToString();
+    }
+
+    public void ResetTimer()
+    {
+        time = 0;
+        text_time.text = "";
+    }
+
+    public void SetTimer(float inputTime)
+    {
+        time = inputTime;
+        text_time.text = time.ToString();
     }
 }

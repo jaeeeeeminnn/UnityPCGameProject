@@ -1218,6 +1218,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d779d518d2c923428d8d5c4fbf8bcaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timer: {fileID: 0}
   itemType: 0
   timeToInput: 0
   gameObjectToShow: {fileID: 0}
@@ -1461,6 +1462,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7000daf1f56b8334f8380971021cbdb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timer: {fileID: 0}
   itemType: 1
   timeToInput: 1
   gameObjectToShow: {fileID: 1487600093}
@@ -1491,7 +1493,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 969438536}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.215, y: 0.028, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 500719083}
@@ -3577,8 +3579,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7000daf1f56b8334f8380971021cbdb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 0
-  timeToInput: 0
+  timer: {fileID: 0}
+  itemType: 1
+  timeToInput: 10
   gameObjectToShow: {fileID: 0}
 --- !u!1 &1260207877
 GameObject:
@@ -3967,8 +3970,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7000daf1f56b8334f8380971021cbdb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 0
-  timeToInput: 15
+  timer: {fileID: 0}
+  itemType: 1
+  timeToInput: 10
   gameObjectToShow: {fileID: 1874044490}
 --- !u!1 &1407982349
 GameObject:
@@ -4185,7 +4189,7 @@ MonoBehaviour:
   tutorial: {fileID: 500719081}
   stageMap: {fileID: 212633715}
   player: {fileID: 1657534561}
-  tutorialManager: {fileID: 2058102142}
+  tutorialManager: {fileID: 2058102141}
 --- !u!4 &1497887751
 Transform:
   m_ObjectHideFlags: 0
@@ -4244,6 +4248,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7000daf1f56b8334f8380971021cbdb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timer: {fileID: 0}
   itemType: 1
   timeToInput: 10
   gameObjectToShow: {fileID: 1284494531}
@@ -5512,7 +5517,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2058102142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5527,7 +5532,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1657534561}
   gameManager: {fileID: 1497887750}
-  timerManager: {fileID: 0}
+  timer: {fileID: 1303771661}
   items:
   - {fileID: 895947205}
   - {fileID: 1555110797}

@@ -5,9 +5,8 @@ using UnityEngine;
 public class TutorialManager : MonoBehaviour
 {
     public PlayerController player;
-    //public GameObject informationText;
     public GameManager gameManager;
-    public TimerManager timerManager;
+    public TimerManager timer;
 
     [SerializeField] [Header("Tutorials items")] TutorialItemController[] items;
     public int itemIndex = 0;
@@ -45,6 +44,7 @@ public class TutorialManager : MonoBehaviour
         if (itemIndex > -1 && itemIndex < items.Length)
         {
             items[itemIndex].gameObject.SetActive(true);
+            timer.SetTimer(10);
         }
 
     }

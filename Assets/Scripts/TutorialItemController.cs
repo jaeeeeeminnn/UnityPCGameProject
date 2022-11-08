@@ -5,6 +5,8 @@ using UnityEngine;
 public class TutorialItemController : MonoBehaviour
 {
 
+    public TimerManager timer;
+
     public enum ItemType
     {
         touch,
@@ -12,7 +14,7 @@ public class TutorialItemController : MonoBehaviour
     }
 
     [SerializeField] [Header("따라하기 아이템 종류")] ItemType itemType;
-    [SerializeField] [Header("사용자 입력 대기까지 진행시간")] public float timeToInput;
+    [SerializeField] [Header("사용자 입력 대기까지 진행시간")] float timeToInput;
     [SerializeField] [Header("사용자 입력 대기 시 표시할 게임 오브젝트")] GameObject gameObjectToShow;
 
     bool isReadyToInput = false;
@@ -38,6 +40,7 @@ public class TutorialItemController : MonoBehaviour
                 if(Input.anyKeyDown)
                 {
                     Run();
+                    
                 }
             }
         }
@@ -71,5 +74,7 @@ public class TutorialItemController : MonoBehaviour
         }
 
         gameObjectToShow.SetActive(true);
+        Debug.Log(timeToInput);
+
     }
 }
