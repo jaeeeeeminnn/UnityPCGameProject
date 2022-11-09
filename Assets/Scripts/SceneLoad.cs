@@ -23,11 +23,17 @@ public class SceneLoad : MonoBehaviour
         while(!operation.isDone)
         {
             yield return null;
-            if(progressbar.value < 1f)
+            if(progressbar.value < 0.9f)
+            {
+                progressbar.value = Mathf.MoveTowards(progressbar.value, 0.9f, Time.deltaTime);
+            }
+
+            else if(operation.progress >= 0.9f)
             {
                 progressbar.value = Mathf.MoveTowards(progressbar.value, 1f, Time.deltaTime);
             }
-            else
+
+            if(progressbar.value >= 1f)
             {
                 loadtext.text = "Press SpaceBar";
             }
