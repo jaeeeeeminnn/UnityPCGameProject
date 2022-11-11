@@ -10,12 +10,14 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D rigid;
     SpriteRenderer spriteRenderer;
     Animator anim;
+    CapsuleCollider2D capsuleCollider;
 
     private void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
+        capsuleCollider = GetComponent<CapsuleCollider2D>();
     }
 
     private void Update()
@@ -91,10 +93,39 @@ public class PlayerController : MonoBehaviour
 
     void OnDamaged()
     {
-        gameObject.layer = 11;
+        //Health Down
+        gameManager.HealthDown();
 
+        //Change Layer(Immortal Active)
+        gameObject.layer = 11;
+        
+        //View Alpha
         spriteRenderer.color = new Color(1, 1, 1, 0.4f);
 
+    }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "Portal")
+        {
+            Debug.Log("Æ÷Å» ºÎµúÈû");
+        }
+        else if(collision.gameObject.tag == "Finish")
+        {
+            //Next Stage
+            gameManager.NextStage();
+        }
+    }
+
+    public void OnDie()
+    {
+        //Sprite Alpha
+        spriteRenderer.color = new Color(1, 1, 1, 0.4f);
+        //Sprite Flip Y
+        spriteRenderer.flipY = true;
+        //Collider Disable
+        capsuleCollider.enabled = false;
+        //Die Effect Jump
+        rigid.AddForce(Vector2.up * 5, ForceMode2D.Impulse);
     }
 }

@@ -7,19 +7,16 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
-    public int stageIndex = -1;
+    public int stageIndex;
+    public int health;
 
-    public GameObject tutorial;
     public GameObject stageMap;
     public PlayerController player;
-    public GameObject tutorialManager;
 
     // Start is called before the first frame update
     void Start()
     {
         instance = this;
-
-        isClearTutorial();
     }
 
     // Update is called once per frame
@@ -33,32 +30,36 @@ public class GameManager : MonoBehaviour
         stageIndex++;
     }
 
-    //IEnumerator TutorialRoutine()
-    //{
-        //playerController.enabled = false;
-    //}
-
-    public void isClearTutorial()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("튜토리얼 체크 진입함");
-        int tutorialDone = PlayerPrefs.GetInt("TutorialDone");
-        Debug.Log(tutorialDone);
-        if (tutorialDone == 0)
+        if(collision.gameObject.tag == "Player")
         {
-            tutorial.SetActive(true);
-            tutorialManager.SetActive(true);
-            PlayerPrefs.SetInt("TutorialDone", 1);
-            return;
+            //Health Down
+            HealthDown();
+            Debug.Log("추락 감지됨");
+
+            //Player Reposition
+            collision.attachedRigidbody.velocity = Vector2.zero;
+            collision.transform.position = new Vector3(0, 0, -1);
+
+
+        }
+    }
+
+    public void HealthDown()
+    {
+        if(health > 1)
+        {
+            health--;
         }
         else
         {
-            stageMap.SetActive(true);
-            //PlayerPrefs.SetInt("TutorialDone", 0);
-            return;
+            //Player Die Effact
+            player.OnDie();
+            //Result UI
+            Debug.Log("죽었습니다!");
+            //Retry Button UI
         }
-
-
-
     }
 
 }
