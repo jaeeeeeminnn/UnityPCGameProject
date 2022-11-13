@@ -4,6 +4,15 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    private static PlayerController instance;
+    public static PlayerController Instance
+    {
+        get
+        {
+            return instance;
+        }
+    }
+
     public GameManager gameManager;
     public float maxSpeed;
     public float jumpPower;
@@ -14,6 +23,9 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
+        if (instance == null)
+            instance = this; 
+
         rigid = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
@@ -49,6 +61,13 @@ public class PlayerController : MonoBehaviour
         else
         {
             anim.SetBool("isWalking", true);
+        }
+
+        // Portal Ctrl
+        if (Input.GetKeyDown(KeyCode.UpArrow) && PortalManager.currentPortal != null)
+        {
+            this.transform.position = Vector3.zero;
+            MapController.Instance.SetStage(PortalManager.currentPortal.portalCode);
         }
     }
 
