@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public int stageIndex;
     public int health;
 
+    public Image fadeImage;
     public GameObject stageMap;
     public GameObject[] Stages;
     public PlayerController player;
@@ -80,6 +81,17 @@ public class GameManager : MonoBehaviour
             //Result UI
             Debug.Log("ав╬З╫ю╢о╢ы!");
             //Retry Button UI
+        }
+    }
+
+    IEnumerator FadeCoroutine()
+    {
+        float fadeCount = 0;
+        while(fadeCount < 1.0f)
+        {
+            fadeCount += 0.01f;
+            yield return new WaitForSeconds(0.01f);
+            fadeImage.color = new Color(0, 0, 0, fadeCount);
         }
     }
 
