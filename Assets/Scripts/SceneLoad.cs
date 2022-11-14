@@ -6,41 +6,51 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoad : MonoBehaviour
 {
+    static string nextScene;
+
     public Slider progressbar;
     public Text loadtext;
     
+    public static void LoadScene(string sceneName)
+    {
+        nextScene = sceneName;
+        SceneManager.LoadScene("Loading");
+    }
+
     void Start()
     {
-        StartCoroutine(LoadScene());
+        StartCoroutine(LoadSceneProcess());
     }
     
-    IEnumerator LoadScene()
+    IEnumerator LoadSceneProcess()
     {
         yield return null;
         AsyncOperation operation = SceneManager.LoadSceneAsync("GameScene");
         operation.allowSceneActivation = false;
 
+        float timer = 0f;
+
         while(!operation.isDone)
         {
             yield return null;
-            if(progressbar.value < 0.9f)
+            if(operation.progress < 0.9f)
             {
-                progressbar.value = Mathf.MoveTowards(progressbar.value, 0.9f, Time.deltaTime);
+                progressbar.value = operation.progress;
             }
-
-            else if(operation.progress >= 0.9f)
+            else
             {
-                progressbar.value = Mathf.MoveTowards(progressbar.value, 1f, Time.deltaTime);
-            }
-
-            if(progressbar.value >= 1f)
-            {
-                loadtext.text = "Press SpaceBar";
-            }
-
-            if(Input.GetKeyDown(KeyCode.Space) && progressbar.value >= 1f && operation.progress >= 0.9f)
-            {
-                operation.allowSceneActivation = true;
+                timer += Time.unscaledDeltaTime;
+                progressbar.value = Mathf.Lerp(0.9f, 1f, timer);
+                if(progressbar.value >= 1f)
+                {
+                    loadtext.text = "Press SpaceBar";
+                    if(Input.GetKeyDown(KeyCode.Space))
+                    {
+                        operation.allowSceneActivation = true;
+                        yield break;
+                    }
+                    
+                }
             }
         }
     }

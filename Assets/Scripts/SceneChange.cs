@@ -6,14 +6,9 @@ using UnityEngine.SceneManagement;
 public class SceneChange : MonoBehaviour
 {
 
-
     public void ToLoadingSceneChange()
     {
-        SceneManager.LoadScene("Loading");
+        SceneLoad.LoadScene("GameScene");
     }
 
-    public void ToStartSceneChange()
-    {
-        SceneManager.LoadScene("Start");
-    }
 }
