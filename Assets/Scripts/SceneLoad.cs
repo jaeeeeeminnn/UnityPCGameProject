@@ -44,7 +44,7 @@ public class SceneLoad : MonoBehaviour
                 if(progressbar.value >= 1f)
                 {
                     loadtext.text = "Press SpaceBar";
-                    if(Input.GetKeyDown(KeyCode.Space))
+                    if (Input.GetKeyDown(KeyCode.Space))
                     {
                         operation.allowSceneActivation = true;
                         yield break;
