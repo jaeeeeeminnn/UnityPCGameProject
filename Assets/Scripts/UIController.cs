@@ -5,19 +5,49 @@ using UnityEngine.UI;
 
 public class UIController : MonoBehaviour
 {
-    public float animTime = 2;
-    private Image fadeImage;
-
-    private float start = 1f;
-    private float end = 0f;
-    private float time = 0f;
-
-    public bool stopIn = false;
-    public bool stopOut = true;
-
-    private void Awake()
+    private static UIController instance;
+    public static UIController Instance
     {
-        fadeImage = GetComponent<Image>();
+        get
+        {
+            return instance;
+        }
+    }
+
+    public Image fadeImage;
+    float time = 0.0f;
+    float F_time = 1.0f;
+
+    public void Fade()
+    {
+        StartCoroutine(FadeProcess());
+    }
+
+    IEnumerator FadeProcess()
+    {
+        fadeImage.gameObject.SetActive(true);
+        time = 0.0f;
+        Color alpha = fadeImage.color;
+        while(alpha.a < 1f)
+        {
+            time += Time.deltaTime / F_time;
+            alpha.a = Mathf.Lerp(0, 1, time);
+            fadeImage.color = alpha;
+            yield return null;
+        }
+
+        time = 0.0f;
+
+        yield return new WaitForSeconds(1f);
+        while (alpha.a > 0f)
+        {
+            time += Time.deltaTime / F_time;
+            alpha.a = Mathf.Lerp(1, 0, time);
+            fadeImage.color = alpha;
+            yield return null;
+        }
+        fadeImage.gameObject.SetActive(false);
+        yield return null;
     }
 
     // Start is called before the first frame update
@@ -29,45 +59,6 @@ public class UIController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(stopIn==false && time <=2)
-        {
-            PlayFadeIn();
-        }
-        if(stopOut == false && time <= 2)
-        {
-            PlayFadeOut();
-        }
-
-        if(time>=2 && stopOut==false)
-        {
-            stopIn = true;
-            time = 0f;
-            //Debug.Log("StopIn");
-        }
-        if(time>=2 && stopOut==false)
-        {
-            stopIn = false;
-            stopOut = true;
-            time = 0f;
-            //Debug.Log("StopOut");
-        }
-    }
-
-    void PlayFadeIn()
-    {
-        time += Time.deltaTime / animTime;
-
-        Color color = fadeImage.color;
-        color.a = Mathf.Lerp(start, end, time);
-        fadeImage.color = color;
-    }
-
-    void PlayFadeOut()
-    {
-        time += Time.deltaTime / animTime;
-
-        Color color = fadeImage.color;
-        color.a = Mathf.Lerp(start, end, time);
-        fadeImage.color = color;
+        
     }
 }

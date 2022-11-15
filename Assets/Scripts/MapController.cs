@@ -13,6 +13,7 @@ public class MapController : MonoBehaviour
         }
     }
 
+    public UIController ui;
     public GameObject[] stages;
     public GameObject mainStages;
 
@@ -36,6 +37,7 @@ public class MapController : MonoBehaviour
 
     public void SetStage(int _index)
     {
+        ui.Fade();
         mainStages.SetActive(false);
         for (int i = 0; i < stages.Length; i++)
             stages[i].SetActive(false);
