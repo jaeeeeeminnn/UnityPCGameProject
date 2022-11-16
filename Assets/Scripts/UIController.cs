@@ -39,6 +39,10 @@ public class UIController : MonoBehaviour
         time = 0.0f;
 
         yield return new WaitForSeconds(1f);
+
+        PlayerController.Instance.transform.position = Vector3.zero;
+        MapController.Instance.SetStage(PortalManager.currentPortal.portalCode);
+
         while (alpha.a > 0f)
         {
             time += Time.deltaTime / F_time;
@@ -46,14 +50,20 @@ public class UIController : MonoBehaviour
             fadeImage.color = alpha;
             yield return null;
         }
+
+
+
         fadeImage.gameObject.SetActive(false);
+
         yield return null;
     }
+
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        instance = this;
+        //isFinishFade = false;
     }
 
     // Update is called once per frame

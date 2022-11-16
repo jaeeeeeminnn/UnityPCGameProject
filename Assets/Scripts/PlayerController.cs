@@ -66,8 +66,7 @@ public class PlayerController : MonoBehaviour
         // Portal Ctrl
         if (Input.GetKeyDown(KeyCode.UpArrow) && PortalManager.currentPortal != null)
         {
-            this.transform.position = Vector3.zero;
-            MapController.Instance.SetStage(PortalManager.currentPortal.portalCode);
+            UIController.Instance.Fade();
         }
     }
 
