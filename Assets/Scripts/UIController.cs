@@ -14,16 +14,18 @@ public class UIController : MonoBehaviour
         }
     }
 
+    public static string situation;
     public Image fadeImage;
     float time = 0.0f;
     float F_time = 1.0f;
 
-    public void Fade()
+    public void Fade(string sit)
     {
-        StartCoroutine(FadeProcess());
+        situation = sit;
+        StartCoroutine(FadeProcess(situation));
     }
 
-    IEnumerator FadeProcess()
+    IEnumerator FadeProcess(string situation)
     {
         fadeImage.gameObject.SetActive(true);
         time = 0.0f;
@@ -39,9 +41,12 @@ public class UIController : MonoBehaviour
         time = 0.0f;
 
         yield return new WaitForSeconds(1f);
-
-        PlayerController.Instance.transform.position = Vector3.zero;
-        MapController.Instance.SetStage(PortalManager.currentPortal.portalCode);
+        if(situation == "settingMap")
+        {
+            PlayerController.Instance.transform.position = Vector3.zero;
+            MapController.Instance.SetStage(PortalManager.currentPortal.portalCode);
+        }
+        
 
         while (alpha.a > 0f)
         {
