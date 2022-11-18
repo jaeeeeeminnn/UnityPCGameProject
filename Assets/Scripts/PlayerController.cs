@@ -140,7 +140,7 @@ public class PlayerController : MonoBehaviour
         //Collider Disable
         capsuleCollider.enabled = false;
         //Die Effect Jump
-        rigid.AddForce(Vector2.up * 5, ForceMode2D.Impulse);
+        rigid.AddForce(Vector2.up * 10, ForceMode2D.Impulse);
 
         UIController.Instance.Fade("dead");
 
