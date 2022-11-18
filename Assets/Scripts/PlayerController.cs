@@ -147,12 +147,11 @@ public class PlayerController : MonoBehaviour
         deathCount++;
         PlayerPrefs.SetInt("PlayerDeathCount", deathCount);
 
-        PlayerReplaced();
+        //PlayerReplaced();
     }
 
     public void PlayerReplaced()
     {
-        Debug.Log("PlayerReplaced ¡¯¿‘");
         spriteRenderer.flipY = false;
         capsuleCollider.enabled = true;
         spriteRenderer.color = new Color(1, 1, 1, 1);

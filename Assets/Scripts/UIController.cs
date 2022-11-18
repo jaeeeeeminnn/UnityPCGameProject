@@ -37,6 +37,8 @@ public class UIController : MonoBehaviour
 
     IEnumerator FadeProcess(string situation, Image _image)
     {
+        if(situation == "dead")
+            yield return new WaitForSeconds(1f);
         _image.gameObject.SetActive(true);
         time = 0.0f;
         Color alpha = _image.color;
@@ -59,6 +61,7 @@ public class UIController : MonoBehaviour
         }
         if(situation == "dead")
         {
+            PlayerController.Instance.PlayerReplaced();
             deadCount.text = PlayerController.Instance.deathCount.ToString();
             //NULL
         }
