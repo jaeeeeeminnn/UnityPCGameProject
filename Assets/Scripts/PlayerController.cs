@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public int deathCount = 0;
     public GameManager gameManager;
     public float maxSpeed;
     public float jumpPower;
@@ -30,6 +31,9 @@ public class PlayerController : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
         capsuleCollider = GetComponent<CapsuleCollider2D>();
+
+        deathCount = PlayerPrefs.GetInt("PlayerDeathCount");
+        PlayerPrefs.Save();
     }
 
     private void Update()
@@ -105,21 +109,13 @@ public class PlayerController : MonoBehaviour
     {
         if(collision.gameObject.tag == "Enemy")
         {
-            OnDamaged();
+            OnDie();
         }
     }
 
     void OnDamaged()
     {
-        //Health Down
-        gameManager.HealthDown();
-
-        //Change Layer(Immortal Active)
-        gameObject.layer = 11;
-        
-        //View Alpha
-        spriteRenderer.color = new Color(1, 1, 1, 0.4f);
-
+        //OnDie();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -145,6 +141,22 @@ public class PlayerController : MonoBehaviour
         capsuleCollider.enabled = false;
         //Die Effect Jump
         rigid.AddForce(Vector2.up * 5, ForceMode2D.Impulse);
+
+        UIController.Instance.Fade("dead");
+
+        deathCount++;
+        PlayerPrefs.SetInt("PlayerDeathCount", deathCount);
+
+        PlayerReplaced();
+    }
+
+    public void PlayerReplaced()
+    {
+        Debug.Log("PlayerReplaced ¡¯¿‘");
+        spriteRenderer.flipY = false;
+        capsuleCollider.enabled = true;
+        spriteRenderer.color = new Color(1, 1, 1, 1);
+        this.transform.position = Vector3.zero;
     }
 
     public void VelocityZero()

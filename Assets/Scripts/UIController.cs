@@ -15,50 +15,63 @@ public class UIController : MonoBehaviour
     }
 
     public static string situation;
+    public Text deadCount;
     public Image fadeImage;
+    public Image deadImage;
     float time = 0.0f;
     float F_time = 1.0f;
 
     public void Fade(string sit)
     {
         situation = sit;
-        StartCoroutine(FadeProcess(situation));
+        if(situation == "settingMap")
+        {
+            StartCoroutine(FadeProcess(situation, fadeImage));
+        }
+        if(situation == "dead")
+        {
+            StartCoroutine(FadeProcess(situation, deadImage));
+        }
+
     }
 
-    IEnumerator FadeProcess(string situation)
+    IEnumerator FadeProcess(string situation, Image _image)
     {
-        fadeImage.gameObject.SetActive(true);
+        _image.gameObject.SetActive(true);
         time = 0.0f;
-        Color alpha = fadeImage.color;
+        Color alpha = _image.color;
         while(alpha.a < 1f)
         {
             time += Time.deltaTime / F_time;
             alpha.a = Mathf.Lerp(0, 1, time);
-            fadeImage.color = alpha;
+            _image.color = alpha;
             yield return null;
         }
 
         time = 0.0f;
 
         yield return new WaitForSeconds(1f);
+
         if(situation == "settingMap")
         {
             PlayerController.Instance.transform.position = Vector3.zero;
             MapController.Instance.SetStage(PortalManager.currentPortal.portalCode);
         }
+        if(situation == "dead")
+        {
+            deadCount.text = PlayerController.Instance.deathCount.ToString();
+            //NULL
+        }
         
-
         while (alpha.a > 0f)
         {
             time += Time.deltaTime / F_time;
             alpha.a = Mathf.Lerp(1, 0, time);
-            fadeImage.color = alpha;
+            _image.color = alpha;
             yield return null;
         }
 
-
-
-        fadeImage.gameObject.SetActive(false);
+        _image.gameObject.SetActive(false);
 
         yield return null;
     }
@@ -69,6 +82,7 @@ public class UIController : MonoBehaviour
     {
         instance = this;
         //isFinishFade = false;
+        deadCount.text = PlayerController.Instance.deathCount.ToString();
     }
 
     // Update is called once per frame
