@@ -148,6 +148,8 @@ public class PlayerController : MonoBehaviour
         PlayerPrefs.SetInt("PlayerDeathCount", deathCount);
 
         //PlayerReplaced();
+
+         
     }
 
     public void PlayerReplaced()
