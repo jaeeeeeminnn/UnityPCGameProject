@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MapController : MonoBehaviour
 {
@@ -42,6 +43,5 @@ public class MapController : MonoBehaviour
         for (int i = 0; i < stages.Length; i++)
             stages[i].SetActive(false);
         stages[_index].SetActive(true);
-        
     }
 }
