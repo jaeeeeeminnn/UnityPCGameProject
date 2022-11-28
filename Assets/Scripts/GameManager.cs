@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public void NextStage()
+    public void ClearStage()
     {
         //수정해야함
         //Change Stage
@@ -34,7 +34,9 @@ public class GameManager : MonoBehaviour
         {
             Stages[stageIndex].SetActive(false);
             stageIndex++;
-            Stages[stageIndex].SetActive(true);
+            stageMap.SetActive(true);
+            //Stages[stageIndex].SetActive(true);
+            UIController.Instance.Fade("Clear");
             PlayerReposition();
         }
         else

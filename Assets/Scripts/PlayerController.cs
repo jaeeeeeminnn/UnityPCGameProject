@@ -127,7 +127,7 @@ public class PlayerController : MonoBehaviour
         else if(collision.gameObject.tag == "Finish")
         {
             //Next Stage
-            gameManager.NextStage();
+            gameManager.ClearStage();
         }
     }
 

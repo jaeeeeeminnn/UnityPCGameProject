@@ -16,22 +16,29 @@ public class UIController : MonoBehaviour
 
     public static string situation;
     public Text deadCount;
-    public Image fadeImage;
-    public Image deadImage;
+    public Image[] FadeImages;
     float time = 0.0f;
     float F_time = 1.0f;
 
     public void Fade(string sit)
     {
         situation = sit;
-        if(situation == "settingMap")
+
+        switch(situation)
         {
-            StartCoroutine(FadeProcess(situation, fadeImage));
+            case "settingMap":
+                StartCoroutine(FadeProcess(situation, FadeImages[0]));
+                break;
+            case "dead":
+                StartCoroutine(FadeProcess(situation, FadeImages[1]));
+                break;
+            case "Clear":
+                StartCoroutine(FadeProcess(situation, FadeImages[2]));
+                break;
+
         }
-        if(situation == "dead")
-        {
-            StartCoroutine(FadeProcess(situation, deadImage));
-        }
+
+        
 
     }
 
@@ -63,7 +70,10 @@ public class UIController : MonoBehaviour
         {
             PlayerController.Instance.PlayerReplaced();
             deadCount.text = PlayerController.Instance.deathCount.ToString();
-            //NULL
+        }
+        if(situation == "Clear")
+        {
+
         }
         
         while (alpha.a > 0f)
