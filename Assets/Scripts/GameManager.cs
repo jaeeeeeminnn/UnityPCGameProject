@@ -38,6 +38,7 @@ public class GameManager : MonoBehaviour
             //Stages[stageIndex].SetActive(true);
             UIController.Instance.Fade("Clear");
             PlayerReposition();
+            UIController.Instance.ResetStageInfo();
         }
         else
         {

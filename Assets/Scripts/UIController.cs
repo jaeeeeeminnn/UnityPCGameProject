@@ -16,6 +16,7 @@ public class UIController : MonoBehaviour
 
     public static string situation;
     public Text deadCount;
+    public Text stageInfo;
     public Image[] FadeImages;
     float time = 0.0f;
     float F_time = 1.0f;
@@ -96,6 +97,16 @@ public class UIController : MonoBehaviour
         instance = this;
         //isFinishFade = false;
         deadCount.text = PlayerController.Instance.deathCount.ToString();
+    }
+
+    public void SetStageInfo()
+    {
+        stageInfo.text = "Stage " + GameManager.instance.stageIndex;
+    }
+
+    public void ResetStageInfo()
+    {
+        stageInfo.text = "";
     }
 
     // Update is called once per frame
