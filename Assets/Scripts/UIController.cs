@@ -95,13 +95,14 @@ public class UIController : MonoBehaviour
     void Start()
     {
         instance = this;
-        //isFinishFade = false;
+        //stageInfo.text = "Lobby";
         deadCount.text = PlayerController.Instance.deathCount.ToString();
     }
 
-    public void SetStageInfo()
+    public void SetStageInfo(int _index)
     {
-        stageInfo.text = "Stage " + GameManager.instance.stageIndex;
+        _index++;
+        stageInfo.text = "Stage " + _index.ToString();
     }
 
     public void ResetStageInfo()

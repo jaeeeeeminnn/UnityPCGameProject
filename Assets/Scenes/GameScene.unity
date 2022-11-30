@@ -6140,7 +6140,7 @@ GameObject:
   - component: {fileID: 236376302}
   - component: {fileID: 236376301}
   m_Layer: 0
-  m_Name: Portal1 (2)
+  m_Name: Stage3Portal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12396,7 +12396,7 @@ GameObject:
   - component: {fileID: 401185587}
   - component: {fileID: 401185586}
   m_Layer: 0
-  m_Name: Portal1 (1)
+  m_Name: Stage2Portal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12491,7 +12491,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.2804824, g: 0.2924751, b: 0.31132078, a: 0}
+  m_BackGroundColor: {r: 0, g: 0.6152119, b: 0.7924528, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -12699,7 +12699,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -3409729701443495957, guid: bc228ec6bd691854c9ba82bfa47731e3, type: 3}
+  m_Sprite: {fileID: 7826914341745330205, guid: 5c17de84cefb2e64bb1ba3ab6a969ab9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -13939,7 +13939,7 @@ GameObject:
   - component: {fileID: 1094512186}
   - component: {fileID: 1094512185}
   m_Layer: 0
-  m_Name: Portal1
+  m_Name: Stage1Portal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20017,7 +20017,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 3722290720410359811, guid: bc228ec6bd691854c9ba82bfa47731e3, type: 3}
+  m_Sprite: {fileID: 1380862574710413892, guid: 5c17de84cefb2e64bb1ba3ab6a969ab9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -27146,7 +27146,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 3722290720410359811, guid: bc228ec6bd691854c9ba82bfa47731e3, type: 3}
+  m_Sprite: {fileID: 1380862574710413892, guid: 5c17de84cefb2e64bb1ba3ab6a969ab9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

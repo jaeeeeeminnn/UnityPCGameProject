@@ -43,6 +43,6 @@ public class MapController : MonoBehaviour
         for (int i = 0; i < stages.Length; i++)
             stages[i].SetActive(false);
         stages[_index].SetActive(true);
-        UIController.Instance.SetStageInfo();
+        UIController.Instance.SetStageInfo(_index);
     }
 }
