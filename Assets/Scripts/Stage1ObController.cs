@@ -25,6 +25,7 @@ public class Stage1ObController : MonoBehaviour
         {
             dropOb();
         }
+        
     }
 
     public void dropOb()
