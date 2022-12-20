@@ -6196,6 +6196,36 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.775465, y: 2.025615}
   m_EdgeRadius: 0
+--- !u!1 &286359306
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 286359307}
+  m_Layer: 0
+  m_Name: end2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &286359307
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 286359306}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 21.501, y: 0.495, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1263978582}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &342775224
 GameObject:
   m_ObjectHideFlags: 0
@@ -12848,6 +12878,36 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
+--- !u!1 &815508491
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 815508492}
+  m_Layer: 0
+  m_Name: start2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &815508492
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 815508491}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 21.501, y: -7.495, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1263978582}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &856225716
 GameObject:
   m_ObjectHideFlags: 0
@@ -12986,7 +13046,7 @@ GameObject:
   m_Component:
   - component: {fileID: 932626759}
   m_Layer: 0
-  m_Name: start
+  m_Name: start1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19262,6 +19322,8 @@ Transform:
   - {fileID: 2062269974}
   - {fileID: 1588786842}
   - {fileID: 1589166094}
+  - {fileID: 815508492}
+  - {fileID: 286359307}
   m_Father: {fileID: 1401980111}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -20825,7 +20887,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1588786842}
   m_Layer: 0
-  m_Name: desPos
+  m_Name: desPos1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20855,7 +20917,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1589166094}
   m_Layer: 0
-  m_Name: desPos1
+  m_Name: desPos2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44473,7 +44535,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2062269974}
   m_Layer: 0
-  m_Name: end
+  m_Name: end1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44697,6 +44759,7 @@ GameObject:
   - component: {fileID: 2134828194}
   - component: {fileID: 2134828193}
   - component: {fileID: 2134828192}
+  - component: {fileID: 2134828191}
   m_Layer: 8
   m_Name: Move Ground 2-2
   m_TagString: Platform
@@ -44718,6 +44781,22 @@ Transform:
   m_Father: {fileID: 1263978582}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2134828191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2134828189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9324fd789ffcb6e42a1dbbd719486972, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startPos: {fileID: 815508492}
+  endPos: {fileID: 286359307}
+  desPos: {fileID: 1589166094}
+  speed: 2
 --- !u!251 &2134828192
 PlatformEffector2D:
   m_ObjectHideFlags: 0
