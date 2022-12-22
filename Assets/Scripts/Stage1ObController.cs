@@ -17,13 +17,13 @@ public class Stage1ObController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(detectionArea.GetComponent<BoxCollider2D>().isTrigger == true)
+        /*if(detectionArea.)
         {
             for (int i = 0; i < moveOb.Length; i++)
             {
                 moveOb[i].gameObject.GetComponent<Rigidbody2D>().isKinematic = false;
             }
-        }
+        }*/
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
