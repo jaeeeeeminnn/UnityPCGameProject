@@ -13079,7 +13079,6 @@ GameObject:
   - component: {fileID: 936975932}
   - component: {fileID: 936975933}
   - component: {fileID: 936975935}
-  - component: {fileID: 936975934}
   m_Layer: 9
   m_Name: MoveOb1-2
   m_TagString: Enemy
@@ -13186,7 +13185,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -5.4872146}
+  m_Offset: {x: 0, y: 0.24839354}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -13197,21 +13196,8 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 11.974433}
+  m_Size: {x: 1, y: 0.50321674}
   m_EdgeRadius: 0
---- !u!114 &936975934
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 936975929}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 266169ba4d3db2e499fc4d4a40ebd117, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveOb: []
 --- !u!60 &936975935
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -13404,7 +13390,6 @@ GameObject:
   - component: {fileID: 1119646506}
   - component: {fileID: 1119646507}
   - component: {fileID: 1119646509}
-  - component: {fileID: 1119646508}
   m_Layer: 9
   m_Name: MoveOb1-4
   m_TagString: Enemy
@@ -13511,7 +13496,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -5.500432}
+  m_Offset: {x: 0, y: 0.24712086}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -13522,21 +13507,8 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 12.000864}
+  m_Size: {x: 1, y: 0.5057583}
   m_EdgeRadius: 0
---- !u!114 &1119646508
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1119646503}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 266169ba4d3db2e499fc4d4a40ebd117, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveOb: []
 --- !u!60 &1119646509
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -37903,6 +37875,63 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1883516621
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1883516622}
+  - component: {fileID: 1883516623}
+  m_Layer: 0
+  m_Name: Detection Area
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1883516622
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1883516621}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 16, y: -3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2062353414}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1883516623
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1883516621}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.00000047683716, y: 3.4987202}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.9937925, y: 4.991935}
+  m_EdgeRadius: 0
 --- !u!1 &1884438309
 GameObject:
   m_ObjectHideFlags: 0
@@ -37916,7 +37945,6 @@ GameObject:
   - component: {fileID: 1884438312}
   - component: {fileID: 1884438313}
   - component: {fileID: 1884438315}
-  - component: {fileID: 1884438314}
   m_Layer: 9
   m_Name: MoveOb1-3
   m_TagString: Enemy
@@ -38023,7 +38051,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -5.494932}
+  m_Offset: {x: 0, y: 0.2751522}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -38034,21 +38062,8 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 11.989864}
+  m_Size: {x: 1, y: 0.4496956}
   m_EdgeRadius: 0
---- !u!114 &1884438314
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1884438309}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 266169ba4d3db2e499fc4d4a40ebd117, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveOb: []
 --- !u!60 &1884438315
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -38402,6 +38417,7 @@ MonoBehaviour:
   - {fileID: 936975929}
   - {fileID: 1884438309}
   - {fileID: 1119646503}
+  detectionArea: {fileID: 1883516621}
 --- !u!1 &2002815304
 GameObject:
   m_ObjectHideFlags: 0
@@ -44138,7 +44154,6 @@ GameObject:
   - component: {fileID: 2005715062}
   - component: {fileID: 2005715063}
   - component: {fileID: 2005715065}
-  - component: {fileID: 2005715064}
   m_Layer: 9
   m_Name: MoveOb1-1
   m_TagString: Enemy
@@ -44245,7 +44260,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -5.4865737}
+  m_Offset: {x: 0, y: 0.24580932}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -44256,21 +44271,8 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 11.973149}
+  m_Size: {x: 1, y: 0.5083823}
   m_EdgeRadius: 0
---- !u!114 &2005715064
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2005715059}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 266169ba4d3db2e499fc4d4a40ebd117, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveOb: []
 --- !u!60 &2005715065
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -44586,6 +44588,7 @@ Transform:
   - {fileID: 936975930}
   - {fileID: 1884438310}
   - {fileID: 1119646504}
+  - {fileID: 1883516622}
   m_Father: {fileID: 1401980111}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
