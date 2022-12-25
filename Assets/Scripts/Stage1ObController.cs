@@ -6,7 +6,7 @@ public class Stage1ObController : MonoBehaviour
 {
     public GameObject[] moveOb;
     Rigidbody2D rigid;
-    public GameObject detectionArea;
+    public GameObject detectionArea; //첫번째 구역 trigger
 
     // Start is called before the first frame update
     void Start()
