@@ -30,6 +30,6 @@ public class Stage1ObController : MonoBehaviour
 
     public void dropOb()
     {
-        rigid.isKinematic = false;
+        rigid.gravityScale = 2.0f;
     }
 }

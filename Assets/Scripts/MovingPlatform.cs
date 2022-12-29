@@ -21,7 +21,7 @@ public class MovingPlatform : MonoBehaviour
     {
         transform.position = Vector2.MoveTowards(transform.position, desPos.position, Time.deltaTime * speed);
 
-        if(Vector2.Distance(transform.position, desPos.position) <= 0.05f)
+        if (Vector2.Distance(transform.position, desPos.position) <= 0.05f)
         {
             if(desPos == endPos)
             {
