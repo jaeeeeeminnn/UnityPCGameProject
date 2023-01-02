@@ -6,7 +6,7 @@ public class Stage1ObController : MonoBehaviour
 {
     public static EventBlock currentEvent;
     public Rigidbody2D rigid;
-    public GameObject detectionArea; //첫번째 구역 trigger
+    //public GameObject detectionArea; //첫번째 구역 trigger
 
     // Start is called before the first frame update
     void Start()
@@ -22,14 +22,20 @@ public class Stage1ObController : MonoBehaviour
             switch(currentEvent.type)
             {
                 case 0:
-                    dropOb();
+                    DropOb();
                     break;
             }
         }
     }
 
-    public void dropOb()
+    public void DropOb()
     {
         rigid.gravityScale = 2.0f;
+
+    }
+
+    public void RemoveOb()
+    {
+        
     }
 }

@@ -147,6 +147,7 @@ public class PlayerController : MonoBehaviour
         deathCount++;
         PlayerPrefs.SetInt("PlayerDeathCount", deathCount);
 
+        this.enabled = false;
         //PlayerReplaced();
 
          
@@ -154,6 +155,7 @@ public class PlayerController : MonoBehaviour
 
     public void PlayerReplaced()
     {
+        this.enabled = true;
         spriteRenderer.flipY = false;
         capsuleCollider.enabled = true;
         spriteRenderer.color = new Color(1, 1, 1, 1);
