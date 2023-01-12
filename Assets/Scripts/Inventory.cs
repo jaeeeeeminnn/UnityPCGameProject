@@ -11,7 +11,7 @@ public class Inventory : MonoBehaviour
     public void AddItem(Item _item) //인벤토리에 아이템 추가
     {
         item = _item;
-        //itemImage.sprite = item.itemImage;
+        itemImage.sprite = item.itemImage;
     }
 
     public void ClearSlot() //인벤토리에서 아이템 삭제
