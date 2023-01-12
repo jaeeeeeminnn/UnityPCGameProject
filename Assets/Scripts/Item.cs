@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
-    int itemtype;
+    int itemtype; //아이템을 구별할 아이템코드
 
     // Start is called before the first frame update
     void Start()
