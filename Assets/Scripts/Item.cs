@@ -25,6 +25,8 @@ public class Item : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
             Debug.Log("아이템 충돌");
+            this.enabled = false;
+            //Inventory.Instance.AddItem(this);
         }
     }
 }
