@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
     SpriteRenderer spriteRenderer;
     Animator anim;
     CapsuleCollider2D capsuleCollider;
+    public Inventory theInventory;
 
     private void Awake()
     {
@@ -128,6 +129,12 @@ public class PlayerController : MonoBehaviour
         {
             //Next Stage
             gameManager.ClearStage();
+        }
+
+        else if(collision.gameObject.tag == "Item")
+        {
+            Debug.Log("Item È¹µæ");
+            //theInventory.AcquireItem();
         }
     }
 
