@@ -21,7 +21,8 @@ public class PlayerController : MonoBehaviour
     SpriteRenderer spriteRenderer;
     Animator anim;
     CapsuleCollider2D capsuleCollider;
-    public Inventory theInventory;
+    [SerializeField]
+    private Inventory theInventory;
 
     private void Awake()
     {
@@ -134,7 +135,7 @@ public class PlayerController : MonoBehaviour
         else if(collision.gameObject.tag == "Item")
         {
             Debug.Log("Item È¹µæ");
-            //theInventory.AcquireItem();
+            //theInventory.AcquireItem(item);
         }
     }
 

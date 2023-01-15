@@ -4,15 +4,6 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    private static Inventory instance;
-    public static Inventory Instance
-    {
-        get
-        {
-            return instance;
-        }
-    }
-
     [SerializeField]
     private GameObject go_SlotsParent;
 
@@ -30,12 +21,22 @@ public class Inventory : MonoBehaviour
         
     }
 
-    public void AcquireItem(Item _item, int _count = 1)
+    public void AcquireItem(Item _item)
     {
+        Debug.Log("Acquire 진입");
+        for(int i = 0; i < slots.Length; i++)
+        {
+            if(slots[i].item != null)
+            {
+                Debug.Log("아이템 추가완료1");
+                slots[i+1].AddItem(_item);
+            }
+        }
         for(int i = 0;i<slots.Length;i++)
         {
             if(slots[i].item == null)
             {
+                Debug.Log("아이템 추가 완료");
                 slots[i].AddItem(_item);
                 return;
             }

@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class Key : MonoBehaviour
 {
-    public Item key;
+    public GameObject key;
+
+    [SerializeField]
+    private Inventory theInventory;
 
     // Start is called before the first frame update
     void Start()
@@ -22,9 +25,12 @@ public class Key : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
-            //Debug.Log("Key 충돌");
-            //key.SetActive(false);
-            //Slot.Instance.AddItem(this);
+            Debug.Log("Key 충돌");
+            key.SetActive(false);
+            Debug.Log(this.GetComponent<ItemPickup>().item);
+            Debug.Log(theInventory);
+            //Slot.Instance.AddItem(this.GetComponent<ItemPickup>().item);
+            theInventory.AcquireItem(key.GetComponent<ItemPickup>().item);
         }
     }
 }
