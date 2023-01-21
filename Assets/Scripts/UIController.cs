@@ -14,6 +14,7 @@ public class UIController : MonoBehaviour
         }
     }
 
+    public GameObject inventory;
     public static string situation;
     public Text deadCount;
     public Text stageInfo;
@@ -21,20 +22,24 @@ public class UIController : MonoBehaviour
     float time = 0.0f;
     float F_time = 1.0f;
 
-    public void Fade(string sit)
+    public void Fade(string _situation)
     {
-        situation = sit;
+        situation = _situation;
+        //inventory.SetActive(false);
 
         switch(situation)
         {
             case "settingMap":
                 StartCoroutine(FadeProcess(situation, FadeImages[0]));
+                //inventory.SetActive(false);
                 break;
             case "dead":
                 StartCoroutine(FadeProcess(situation, FadeImages[1]));
+                //inventory.SetActive(false);
                 break;
             case "Clear":
                 StartCoroutine(FadeProcess(situation, FadeImages[2]));
+                //inventory.SetActive(false);
                 break;
 
         }
@@ -43,9 +48,10 @@ public class UIController : MonoBehaviour
 
     }
 
-    IEnumerator FadeProcess(string situation, Image _image)
+    IEnumerator FadeProcess(string _situation, Image _image)
     {
-        if(situation == "dead")
+        inventory.SetActive(false);
+        if (_situation == "dead")
             yield return new WaitForSeconds(1f);
         _image.gameObject.SetActive(true);
         time = 0.0f;
@@ -62,17 +68,17 @@ public class UIController : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
 
-        if(situation == "settingMap")
+        if(_situation == "settingMap")
         {
             PlayerController.Instance.transform.position = Vector3.zero;
             MapController.Instance.SetStage(PortalManager.currentPortal.portalCode);
         }
-        if(situation == "dead")
+        if(_situation == "dead")
         {
             PlayerController.Instance.PlayerReplaced();
             deadCount.text = PlayerController.Instance.deathCount.ToString();
         }
-        if(situation == "Clear")
+        if(_situation == "Clear")
         {
 
         }
@@ -86,6 +92,7 @@ public class UIController : MonoBehaviour
         }
 
         _image.gameObject.SetActive(false);
+        inventory.SetActive(true);
 
         yield return null;
     }
