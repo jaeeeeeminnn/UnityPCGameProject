@@ -28,6 +28,7 @@ public class Key : MonoBehaviour
         { 
             key.SetActive(false);
             theInventory.AcquireItem(key.GetComponent<ItemPickup>().item);
+
             showPlatform.SetActive(true);
         }
     }
