@@ -348,7 +348,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -20360,6 +20360,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stageIndex: 0
   health: 1
+  inventory: {fileID: 0}
   stageMap: {fileID: 212633715}
   Stages:
   - {fileID: 1391029029}
@@ -21664,7 +21665,7 @@ MonoBehaviour:
   gameManager: {fileID: 1497887750}
   maxSpeed: 4.5
   jumpPower: 20
-  theInventory: {fileID: 0}
+  theInventory: {fileID: 588135030}
 --- !u!212 &1657534562
 SpriteRenderer:
   m_ObjectHideFlags: 0

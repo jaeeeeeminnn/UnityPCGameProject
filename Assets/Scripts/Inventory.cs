@@ -39,4 +39,21 @@ public class Inventory : MonoBehaviour
             }
         }
     }
+
+    public bool searchItem(string _name)
+    {
+        for(int i=0; i<slots.Length; i++)
+        {
+            if(slots[i].item != null)
+            {
+                if (slots[i].item.itemName == _name)
+                {
+                    Debug.Log(slots[i].item.name);
+                    return true;
+                }
+            }
+            
+        }
+        return false;
+    }
 }

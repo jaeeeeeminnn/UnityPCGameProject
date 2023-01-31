@@ -21,8 +21,8 @@ public class PlayerController : MonoBehaviour
     SpriteRenderer spriteRenderer;
     Animator anim;
     CapsuleCollider2D capsuleCollider;
-    [SerializeField]
-    private Inventory theInventory;
+    //[SerializeField]
+    public Inventory theInventory;
 
     private void Awake()
     {
@@ -129,7 +129,16 @@ public class PlayerController : MonoBehaviour
         else if(collision.gameObject.tag == "Finish")
         {
             //Next Stage
-            gameManager.ClearStage();
+            if (theInventory.searchItem("Key"))
+            {
+                gameManager.ClearStage();
+                Debug.Log("Stage Clear");
+            }
+            else
+            {
+                Debug.Log("클리어 실패!");
+            }
+            
         }
 
         else if(collision.gameObject.tag == "Item")
