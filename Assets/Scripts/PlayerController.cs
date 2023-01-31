@@ -21,8 +21,8 @@ public class PlayerController : MonoBehaviour
     SpriteRenderer spriteRenderer;
     Animator anim;
     CapsuleCollider2D capsuleCollider;
-    //[SerializeField]
-    public Inventory theInventory;
+    [SerializeField]
+    private Inventory theInventory;
 
     private void Awake()
     {
