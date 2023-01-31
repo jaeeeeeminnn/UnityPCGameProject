@@ -10,7 +10,11 @@ public class GameManager : MonoBehaviour
     public int stageIndex;
     public int health;
 
-    public Inventory inventory;
+
+    public Inventory theinventory;
+
+    public Image inventory;
+
     public GameObject stageMap;
     public GameObject[] Stages;
     public PlayerController player;
