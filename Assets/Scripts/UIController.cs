@@ -18,6 +18,7 @@ public class UIController : MonoBehaviour
     public static string situation;
     public Text deadCount;
     public Text stageInfo;
+    public Text Required;
     public Image[] FadeImages;
     float time = 0.0f;
     float F_time = 1.0f;
@@ -115,6 +116,16 @@ public class UIController : MonoBehaviour
     public void ResetStageInfo()
     {
         stageInfo.text = "";
+    }
+
+    public void NoticeRequried()
+    {
+        Required.text = "A key is required to clear!";
+    }
+
+    public void ResetNoticeRequried()
+    {
+        Required.text = "";
     }
 
     // Update is called once per frame

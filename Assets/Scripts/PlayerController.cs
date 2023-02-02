@@ -33,6 +33,7 @@ public class PlayerController : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
         capsuleCollider = GetComponent<CapsuleCollider2D>();
+        
 
         deathCount = PlayerPrefs.GetInt("PlayerDeathCount");
         PlayerPrefs.Save();
@@ -115,11 +116,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void OnDamaged()
-    {
-        //OnDie();
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.tag == "Portal")
@@ -137,6 +133,7 @@ public class PlayerController : MonoBehaviour
             else
             {
                 Debug.Log("클리어 실패!");
+                UIController.Instance.NoticeRequried();
             }
             
         }
