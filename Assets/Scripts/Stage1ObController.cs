@@ -28,6 +28,9 @@ public class Stage1ObController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// EventBlock type Code = 0인 장애물을 떨어트림
+    /// </summary>
     public void DropOb()
     {
         rigid.gravityScale = 2.0f;

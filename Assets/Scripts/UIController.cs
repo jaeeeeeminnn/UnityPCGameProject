@@ -23,6 +23,11 @@ public class UIController : MonoBehaviour
     float time = 0.0f;
     float F_time = 1.0f;
 
+    /// <summary>
+    /// 상황별로 나누어 Fade 효과를 줌
+    /// 상황1 : 스테이지 이동, 상황2 : 죽음, 상황3 : 스테이지 클리어
+    /// </summary>
+    /// <param name="_situation"></param>
     public void Fade(string _situation)
     {
         situation = _situation;
@@ -44,9 +49,6 @@ public class UIController : MonoBehaviour
                 break;
 
         }
-
-        
-
     }
 
     IEnumerator FadeProcess(string _situation, Image _image)

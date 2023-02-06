@@ -21,6 +21,11 @@ public class Inventory : MonoBehaviour
         
     }
 
+    /// <summary>
+    /// 인벤토리에 아이템을 추가하는 함수
+    /// 인벤토리가 가득찼을 때 작업 추가해야함
+    /// </summary>
+    /// <param name="_item"></param>
     public void AcquireItem(Item _item)
     {
         for(int i = 0; i < slots.Length; i++)
@@ -40,6 +45,11 @@ public class Inventory : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 인벤토리에 아이템 이름이 _name인 아이템을 찾는 함수
+    /// </summary>
+    /// <param name="_name"></param>
+    /// <returns></returns>
     public bool searchItem(string _name)
     {
         for(int i=0; i<slots.Length; i++)

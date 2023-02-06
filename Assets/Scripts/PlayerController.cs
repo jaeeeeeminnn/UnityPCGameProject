@@ -156,15 +156,13 @@ public class PlayerController : MonoBehaviour
         //Die Effect Jump
         rigid.AddForce(Vector2.up * 10, ForceMode2D.Impulse);
 
-        UIController.Instance.Fade("dead");
+        UIController.Instance.Fade("dead"); //Fade 코루틴 호출
 
-        deathCount++;
-        PlayerPrefs.SetInt("PlayerDeathCount", deathCount);
+        deathCount++; //사망횟수 추가
+        PlayerPrefs.SetInt("PlayerDeathCount", deathCount); //사망횟수 저장
 
-        this.enabled = false;
+        this.enabled = false; //플레이어가 사망 시 키입력으로 움직일 수 없게 함
         //PlayerReplaced();
-
-         
     }
 
     public void PlayerReplaced()
