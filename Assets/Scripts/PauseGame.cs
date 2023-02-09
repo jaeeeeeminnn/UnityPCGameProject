@@ -7,6 +7,8 @@ public class PauseGame : MonoBehaviour
     public static bool gameIsPause = false;
     public GameObject menu;
     public SceneChange sceneChange;
+    [SerializeField]
+    private GameObject theInventory;
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +37,7 @@ public class PauseGame : MonoBehaviour
         menu.SetActive(false);
         Time.timeScale = 1.0f;
         gameIsPause = false;
+        theInventory.SetActive(true);
     }
 
     public void Pause()
@@ -42,6 +45,7 @@ public class PauseGame : MonoBehaviour
         menu.SetActive(true);
         Time.timeScale = 0.0f;
         gameIsPause = true;
+        theInventory.SetActive(false);
     }
 
     public void QuitGame()
