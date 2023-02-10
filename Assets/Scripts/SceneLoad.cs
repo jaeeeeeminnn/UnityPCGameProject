@@ -15,6 +15,7 @@ public class SceneLoad : MonoBehaviour
     {
         nextScene = sceneName;
         SceneManager.LoadScene("Loading");
+        
     }
 
     void Start()
@@ -25,7 +26,7 @@ public class SceneLoad : MonoBehaviour
     IEnumerator LoadSceneProcess()
     {
         yield return null;
-        AsyncOperation operation = SceneManager.LoadSceneAsync("GameScene");
+        AsyncOperation operation = SceneManager.LoadSceneAsync(nextScene);
         operation.allowSceneActivation = false;
 
         float timer = 0f;
@@ -40,6 +41,7 @@ public class SceneLoad : MonoBehaviour
             else
             {
                 timer += Time.unscaledDeltaTime;
+                Debug.Log(timer);
                 progressbar.value = Mathf.Lerp(0.9f, 1f, timer);
                 if(progressbar.value >= 1f)
                 {
@@ -47,6 +49,7 @@ public class SceneLoad : MonoBehaviour
                     if (Input.GetKeyDown(KeyCode.Space))
                     {
                         operation.allowSceneActivation = true;
+                        Time.timeScale = 1.0f;
                         yield break;
                     }
                     
