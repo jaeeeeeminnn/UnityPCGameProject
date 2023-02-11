@@ -18,7 +18,7 @@ public class UIController : MonoBehaviour
     public static string situation;
     public Text deadCount;
     public Text stageInfo;
-    public Text Required;
+    public GameObject Required;
     public Image[] FadeImages;
     float time = 0.0f;
     float F_time = 1.0f;
@@ -31,21 +31,17 @@ public class UIController : MonoBehaviour
     public void Fade(string _situation)
     {
         situation = _situation;
-        //inventory.SetActive(false);
 
         switch(situation)
         {
             case "settingMap":
                 StartCoroutine(FadeProcess(situation, FadeImages[0]));
-                //inventory.SetActive(false);
                 break;
             case "dead":
                 StartCoroutine(FadeProcess(situation, FadeImages[1]));
-                //inventory.SetActive(false);
                 break;
             case "Clear":
                 StartCoroutine(FadeProcess(situation, FadeImages[2]));
-                //inventory.SetActive(false);
                 break;
 
         }
@@ -122,13 +118,9 @@ public class UIController : MonoBehaviour
 
     public void NoticeRequried()
     {
-        Required.text = "A key is required to clear!";
+        Required.SetActive(true);
     }
 
-    public void ResetNoticeRequried()
-    {
-        Required.text = "";
-    }
 
     // Update is called once per frame
     void Update()

@@ -7,13 +7,11 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
-    public int stageIndex;
-    public int health;
+    public int stageIndex; //StageCode
+    public int health; //생명력 1이라 필요한가?싶음
 
 
-    public Inventory theinventory;
-
-    //public Image inventory;
+    public Inventory theinventory; //Player Inventory
 
     public GameObject stageMap;
     public GameObject[] Stages;
