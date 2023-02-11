@@ -27,7 +27,7 @@ public class Key : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         { 
             key.SetActive(false);
-            theInventory.AcquireItem(key.GetComponent<ItemPickup>().item);
+            theInventory.acquireItem(key.GetComponent<ItemPickup>().item);
 
             showPlatform.SetActive(true);
         }

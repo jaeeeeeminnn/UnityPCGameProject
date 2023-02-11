@@ -41,4 +41,10 @@ public class Stage1ObController : MonoBehaviour
     {
         
     }
+
+    public void RegeneratoryOb()
+    {
+
+    }
+
 }

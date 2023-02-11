@@ -26,23 +26,21 @@ public class Inventory : MonoBehaviour
     /// 인벤토리가 가득찼을 때 작업 추가해야함
     /// </summary>
     /// <param name="_item"></param>
-    public void AcquireItem(Item _item)
+    public void acquireItem(Item _item)
     {
         for(int i = 0; i < slots.Length; i++)
         {
             if(slots[i].item != null)
             {
-                slots[i+1].AddItem(_item);
+                slots[i+1].addItem(_item);
             }
-        }
-        for(int i = 0;i<slots.Length;i++)
-        {
-            if(slots[i].item == null)
+            else
             {
-                slots[i].AddItem(_item);
+                slots[i].addItem(_item);
                 return;
             }
         }
+        
     }
 
     /// <summary>
@@ -65,5 +63,20 @@ public class Inventory : MonoBehaviour
             
         }
         return false;
+    }
+
+    /// <summary>
+    /// 인벤토리의 모든 아이템을 삭제하는 함수
+    /// </summary>
+    public void removeAllItem()
+    {
+        for(int i=0; i<slots.Length;i++)
+        {
+            if(slots[i].item != null)
+            {
+                Debug.Log("Item 삭제 작업");
+                slots[i].clearSlot();
+            }
+        }
     }
 }

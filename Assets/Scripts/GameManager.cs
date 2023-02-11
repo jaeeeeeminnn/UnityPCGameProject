@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
 
     public Inventory theinventory;
 
-    public Image inventory;
+    //public Image inventory;
 
     public GameObject stageMap;
     public GameObject[] Stages;
@@ -44,6 +44,7 @@ public class GameManager : MonoBehaviour
             UIController.Instance.Fade("Clear");
             PlayerReposition();
             UIController.Instance.ResetStageInfo();
+            theinventory.removeAllItem();
         }
         else
         {

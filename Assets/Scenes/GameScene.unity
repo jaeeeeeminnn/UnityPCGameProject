@@ -6261,7 +6261,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!156049354 &212633716
 Grid:
   m_ObjectHideFlags: 0
@@ -13983,7 +13983,7 @@ GameObject:
   - component: {fileID: 936975930}
   - component: {fileID: 936975931}
   m_Layer: 9
-  m_Name: MoveOb1-2
+  m_Name: DropOb1-2
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14443,7 +14443,7 @@ GameObject:
   - component: {fileID: 1119646504}
   - component: {fileID: 1119646505}
   m_Layer: 9
-  m_Name: MoveOb1-4
+  m_Name: DropOb1-4
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21146,7 +21146,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1391029030
 Transform:
   m_ObjectHideFlags: 0
@@ -40163,7 +40163,7 @@ GameObject:
   - component: {fileID: 1884438310}
   - component: {fileID: 1884438311}
   m_Layer: 9
-  m_Name: MoveOb1-3
+  m_Name: DropOb1-3
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46205,7 +46205,7 @@ GameObject:
   - component: {fileID: 2005715060}
   - component: {fileID: 2005715061}
   m_Layer: 9
-  m_Name: MoveOb1-1
+  m_Name: DropOb1-1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
