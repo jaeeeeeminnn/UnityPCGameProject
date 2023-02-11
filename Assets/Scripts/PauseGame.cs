@@ -50,7 +50,7 @@ public class PauseGame : MonoBehaviour
 
     public void QuitGame()
     {
-
+        Application.Quit();
     }
 
     public void ToStartScreen()

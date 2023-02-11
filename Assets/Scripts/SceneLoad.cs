@@ -41,7 +41,6 @@ public class SceneLoad : MonoBehaviour
             else
             {
                 timer += Time.unscaledDeltaTime;
-                Debug.Log(timer);
                 progressbar.value = Mathf.Lerp(0.9f, 1f, timer);
                 if(progressbar.value >= 1f)
                 {
