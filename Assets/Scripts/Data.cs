@@ -4,7 +4,7 @@ using System;
 public class Data
 {
     public bool[] isUnlock = new bool[10];
-    //public int deathCount;
+    public int deathCount;
     //Transform savePoint;
 
     private void Start()
