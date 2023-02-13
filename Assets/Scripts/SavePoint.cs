@@ -4,17 +4,20 @@ using UnityEngine;
 
 public class SavePoint : MonoBehaviour
 {
+    Transform savePosition;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        savePosition = GetComponent<Transform>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-       if(collision.gameObject.tag == "SavePoint")
+        if(collision.gameObject.tag == "Player")
         {
-            //Save Position
+            Debug.Log("SavePoint Ãæµ¹!");
+            Debug.Log(savePosition.position);
         }
     }
 

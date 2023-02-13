@@ -50,6 +50,7 @@ public class PauseGame : MonoBehaviour
 
     public void QuitGame()
     {
+        DataManager.Instance.SaveGameData();
         Application.Quit();
     }
 

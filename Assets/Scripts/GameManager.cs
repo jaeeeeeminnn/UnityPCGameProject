@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         instance = this;
+        DataManager.Instance.loadGameData();
     }
 
     // Update is called once per frame
