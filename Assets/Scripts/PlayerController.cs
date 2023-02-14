@@ -122,7 +122,7 @@ public class PlayerController : MonoBehaviour
         else if(collision.gameObject.tag == "Finish")
         {
             //Next Stage
-            if (theInventory.searchItem("Key"))
+            if (theInventory.SearchItem("Key"))
             {
                 gameManager.ClearStage();
                 Debug.Log("Stage Clear");
@@ -168,7 +168,8 @@ public class PlayerController : MonoBehaviour
         spriteRenderer.flipY = false;
         capsuleCollider.enabled = true;
         spriteRenderer.color = new Color(1, 1, 1, 1);
-        this.transform.position = Vector3.zero;
+        //this.transform.position = Vector3.zero;
+        GameManager.Instance.DiePlayerReplace();
     }
 
     public void VelocityZero()

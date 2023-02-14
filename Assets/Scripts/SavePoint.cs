@@ -16,7 +16,7 @@ public class SavePoint : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
-            DataManager.Instance.data.isSavePoint[GameManager.Instance.stageIndex] = true;
+            DataManager.Instance.data.isSave[GameManager.Instance.stageIndex] = true;
             DataManager.Instance.data.savePoint = savePosition.position;
             Debug.Log("SavePoint Ãæµ¹!");
         }

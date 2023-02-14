@@ -17,26 +17,26 @@ public class Slot : MonoBehaviour
     public Item item; //획득한 아이템
     public Image itemImage; //아이템 이미지
 
-    private void setColor(float _alpha)
+    private void SetColor(float _alpha)
     {
         Color color = itemImage.color;
         color.a = _alpha;
         itemImage.color = color;
     }
 
-    public void addItem(Item _item) //인벤토리에 아이템 추가
+    public void AddItem(Item _item) //인벤토리에 아이템 추가
     {
         item = _item;
         itemImage.sprite = item.itemImage;
 
-        setColor(1);
+        SetColor(1);
     }
 
-    public void clearSlot() //인벤토리에서 아이템 삭제
+    public void ClearSlot() //인벤토리에서 아이템 삭제
     {
         item = null;
         itemImage.sprite = null;
-        setColor(0);
+        SetColor(0);
     }
 
     // Start is called before the first frame update

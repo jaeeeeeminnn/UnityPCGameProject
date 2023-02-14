@@ -22,9 +22,4 @@ public class PortalManager : MonoBehaviour
             currentPortal = null; 
         }
     }
-
-    public void ChangePortalColor()
-    {
-
-    }
 }

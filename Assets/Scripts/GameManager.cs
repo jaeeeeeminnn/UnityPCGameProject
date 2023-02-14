@@ -32,8 +32,9 @@ public class GameManager : MonoBehaviour
     {
         if(instance == null)
             instance = this;
-        DataManager.Instance.loadGameData();
-        createPortal();
+        DataManager.Instance.LoadGameData();
+        CreatePortal();
+        PlayerZeroPosition();
         
     }
 
@@ -55,9 +56,11 @@ public class GameManager : MonoBehaviour
             //Stages[stageIndex].SetActive(true);
             UIController.Instance.Fade("Clear");
             DataManager.Instance.data.isUnlock[stageIndex] = true;
-            PlayerReposition();
+            CreatePortal();
+            PlayerZeroPosition();
             UIController.Instance.ResetStageInfo();
-            theinventory.removeAllItem();
+            theinventory.RemoveAllItem();
+            DataManager.Instance.SaveGameData();
         }
         else
         {
@@ -77,13 +80,16 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void PlayerReposition()
+    void PlayerZeroPosition()
     {
         player.transform.position = new Vector3(0, 0, -1);
         player.VelocityZero();
     }
     
-    void createPortal()
+    /// <summary>
+    /// 포탈 생성 함수
+    /// </summary>
+    void CreatePortal()
     {
         for (int i = 0; i < DataManager.Instance.data.isUnlock.Length; i++)
         {
@@ -95,6 +101,18 @@ public class GameManager : MonoBehaviour
             {
                 portalTile.SetTile(portalPos[i], portalTiles[1]);
             }
+        }
+    }
+
+    public void DiePlayerReplace()
+    {
+        if(DataManager.Instance.data.isSave[stageIndex] == true && DataManager.Instance.data.savePoint != null)
+        {
+            player.transform.position = DataManager.Instance.data.savePoint;
+        }
+        else
+        {
+            PlayerZeroPosition();
         }
     }
  }
