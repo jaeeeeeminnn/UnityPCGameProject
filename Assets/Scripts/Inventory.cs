@@ -12,6 +12,7 @@ public class Inventory : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //DataManager.Instance.data.playerInventory = this;
         slots = go_SlotsParent.GetComponentsInChildren<Slot>();
     }
 
@@ -33,13 +34,19 @@ public class Inventory : MonoBehaviour
             if(slots[i].item != null)
             {
                 slots[i+1].addItem(_item);
+                break;
             }
             else
             {
                 slots[i].addItem(_item);
-                return;
+                break;
             }
         }
+        //Debug.Log("ÀúÀå Àü");
+        //DataManager.Instance.data.playerInventory = this;
+        //DataManager.Instance.SaveGameData();
+
+        return;
         
     }
 

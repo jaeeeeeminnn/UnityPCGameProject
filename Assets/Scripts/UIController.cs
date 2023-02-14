@@ -75,7 +75,7 @@ public class UIController : MonoBehaviour
         if(_situation == "dead")
         {
             PlayerController.Instance.PlayerReplaced();
-            deadCount.text = PlayerController.Instance.deathCount.ToString();
+            deadCount.text = DataManager.Instance.data.deathCount.ToString();
         }
         if(_situation == "Clear")
         {

@@ -1,27 +1,40 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager instance;
+
+    private static GameManager instance;
+    public static GameManager Instance
+    {
+        get
+        {
+            return instance;
+        }
+    }
 
     public int stageIndex; //StageCode
-    public int health; //생명력 1이라 필요한가?싶음
-
 
     public Inventory theinventory; //Player Inventory
 
     public GameObject stageMap;
     public GameObject[] Stages;
     public PlayerController player;
+    public Tilemap portalTile;
+    public Tile[] portalTiles;
+    private Vector3Int[] portalPos = { new Vector3Int(14, -1, 0), new Vector3Int(25,2,0), new Vector3Int(36, 6,0)};
 
     // Start is called before the first frame update
     void Start()
     {
-        instance = this;
+        if(instance == null)
+            instance = this;
         DataManager.Instance.loadGameData();
+        createPortal();
+        
     }
 
     // Update is called once per frame
@@ -41,6 +54,7 @@ public class GameManager : MonoBehaviour
             stageMap.SetActive(true);
             //Stages[stageIndex].SetActive(true);
             UIController.Instance.Fade("Clear");
+            DataManager.Instance.data.isUnlock[stageIndex] = true;
             PlayerReposition();
             UIController.Instance.ResetStageInfo();
             theinventory.removeAllItem();
@@ -57,14 +71,8 @@ public class GameManager : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
-            //Player Reposition
-            if(health > 1)
-            {
-                PlayerReposition();
-            }
 
-            //Health Down
-            HealthDown();
+            player.OnDie();
             Debug.Log("추락 감지됨");
         }
     }
@@ -74,24 +82,21 @@ public class GameManager : MonoBehaviour
         player.transform.position = new Vector3(0, 0, -1);
         player.VelocityZero();
     }
-
-    public void HealthDown()
+    
+    void createPortal()
     {
-        if(health > 1)
+        for (int i = 0; i < DataManager.Instance.data.isUnlock.Length; i++)
         {
-            health--;
-        }
-        else
-        {
-            //Player Die Effact
-            player.OnDie();
-            //Result UI
-            Debug.Log("죽었습니다!");
-            //Retry Button UI
+            if (DataManager.Instance.data.isUnlock[i] == true)
+            {
+                portalTile.SetTile(portalPos[i], portalTiles[0]);
+            }
+            else
+            {
+                portalTile.SetTile(portalPos[i], portalTiles[1]);
+            }
         }
     }
-
-     
-    }
+ }
 
 

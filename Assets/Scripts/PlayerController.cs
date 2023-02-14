@@ -34,9 +34,6 @@ public class PlayerController : MonoBehaviour
         anim = GetComponent<Animator>();
         capsuleCollider = GetComponent<CapsuleCollider2D>();
         
-
-        deathCount = PlayerPrefs.GetInt("PlayerDeathCount");
-        PlayerPrefs.Save();
     }
 
     private void Update()
@@ -158,11 +155,11 @@ public class PlayerController : MonoBehaviour
 
         UIController.Instance.Fade("dead"); //Fade 코루틴 호출
 
-        deathCount++; //사망횟수 추가
-        PlayerPrefs.SetInt("PlayerDeathCount", deathCount); //사망횟수 저장
+        DataManager.Instance.data.deathCount++;
 
         this.enabled = false; //플레이어가 사망 시 키입력으로 움직일 수 없게 함
         //PlayerReplaced();
+        Debug.Log("죽었습니다!");
     }
 
     public void PlayerReplaced()
