@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public Vector3 deathPosition;
     public int deathCount = 0;
     public GameManager gameManager;
     public float maxSpeed;
@@ -144,6 +145,11 @@ public class PlayerController : MonoBehaviour
 
     public void OnDie()
     {
+        if (GameManager.isLobby == true)
+        {
+            deathPosition = this.transform.position;
+        }
+
         //Sprite Alpha
         spriteRenderer.color = new Color(1, 1, 1, 0.4f);
         //Sprite Flip Y
@@ -158,8 +164,8 @@ public class PlayerController : MonoBehaviour
         DataManager.Instance.data.deathCount++;
 
         this.enabled = false; //플레이어가 사망 시 키입력으로 움직일 수 없게 함
-        //PlayerReplaced();
         Debug.Log("죽었습니다!");
+
     }
 
     public void PlayerReplaced()

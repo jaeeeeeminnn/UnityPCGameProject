@@ -40,6 +40,7 @@ public class MapController : MonoBehaviour
     {
         Debug.Log(_index);
         mainStages.SetActive(false);
+        GameManager.isLobby = false;
         for (int i = 0; i < stages.Length; i++)
             stages[i].SetActive(false);
         stages[_index].SetActive(true);

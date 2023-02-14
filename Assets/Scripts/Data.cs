@@ -9,6 +9,7 @@ public class Data
     public Inventory playerInventory;
     public int deathCount;
     public Vector3 savePoint;
+    public Vector3 deathPosition;
 
     private void Start()
     {

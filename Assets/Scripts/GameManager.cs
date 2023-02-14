@@ -20,7 +20,8 @@ public class GameManager : MonoBehaviour
 
     public Inventory theinventory; //Player Inventory
 
-    public GameObject stageMap;
+    public static bool isLobby;
+    public GameObject lobby;
     public GameObject[] Stages;
     public PlayerController player;
     public Tilemap portalTile;
@@ -35,7 +36,7 @@ public class GameManager : MonoBehaviour
         DataManager.Instance.LoadGameData();
         CreatePortal();
         PlayerZeroPosition();
-        
+        isLobby = true;
     }
 
     // Update is called once per frame
@@ -52,7 +53,8 @@ public class GameManager : MonoBehaviour
         {
             Stages[stageIndex].SetActive(false);
             stageIndex++;
-            stageMap.SetActive(true);
+            lobby.SetActive(true);
+            isLobby = true;
             //Stages[stageIndex].SetActive(true);
             UIController.Instance.Fade("Clear");
             DataManager.Instance.data.isUnlock[stageIndex] = true;
@@ -106,7 +108,11 @@ public class GameManager : MonoBehaviour
 
     public void DiePlayerReplace()
     {
-        if(DataManager.Instance.data.isSave[stageIndex] == true && DataManager.Instance.data.savePoint != null)
+        if(isLobby == true)
+        {
+            player.transform.position = PlayerController.Instance.deathPosition - new Vector3(2,0,0); //자세한 작업 필요
+        }
+        else if(DataManager.Instance.data.isSave[stageIndex] == true && DataManager.Instance.data.savePoint != null)
         {
             player.transform.position = DataManager.Instance.data.savePoint;
         }
