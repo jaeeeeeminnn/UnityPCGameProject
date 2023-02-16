@@ -26,7 +26,8 @@ public class GameManager : MonoBehaviour
     public PlayerController player;
     public Tilemap portalTile;
     public Tile[] portalTiles;
-    private Vector3Int[] portalPos = { new Vector3Int(14, -1, 0), new Vector3Int(25,2,0), new Vector3Int(36, 6,0)};
+    private Vector3Int[] portalPos = { new Vector3Int(14, -1, 0), new Vector3Int(24,2,0), new Vector3Int(36, 6,0)};
+    private Vector3Int[] lobbyRespawnPos = { new Vector3Int(0,0,0), new Vector3Int(14,0,0), new Vector3Int(25,3,0), new Vector3Int(36,7,0)};
 
     // Start is called before the first frame update
     void Start()
@@ -110,7 +111,20 @@ public class GameManager : MonoBehaviour
     {
         if(isLobby == true)
         {
-            player.transform.position = PlayerController.Instance.deathPosition - new Vector3(2,0,0); //자세한 작업 필요
+            switch(LobbyArea.currentLobbyArea.areaCode)
+            {
+                case 0:
+                    player.transform.position = lobbyRespawnPos[0];
+                    break;
+                case 1:
+                    player.transform.position = lobbyRespawnPos[1];
+                    break;
+                case 2:
+                    player.transform.position = lobbyRespawnPos[2];
+                    break;
+
+            }
+            //player.transform.position = PlayerController.Instance.deathPosition - new Vector3(2,0,0); //자세한 작업 필요
         }
         else if(DataManager.Instance.data.isSave[stageIndex] == true && DataManager.Instance.data.savePoint != null)
         {

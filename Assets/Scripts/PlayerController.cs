@@ -162,6 +162,7 @@ public class PlayerController : MonoBehaviour
         UIController.Instance.Fade("dead"); //Fade 코루틴 호출
 
         DataManager.Instance.data.deathCount++;
+        DataManager.Instance.SaveGameData();
 
         this.enabled = false; //플레이어가 사망 시 키입력으로 움직일 수 없게 함
         Debug.Log("죽었습니다!");

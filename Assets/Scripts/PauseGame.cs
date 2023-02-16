@@ -54,6 +54,11 @@ public class PauseGame : MonoBehaviour
         Application.Quit();
     }
 
+    public void Save()
+    {
+        DataManager.Instance.SaveGameData();
+    }
+
     public void ToStartScreen()
     {
         
