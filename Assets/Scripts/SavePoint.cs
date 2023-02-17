@@ -19,6 +19,7 @@ public class SavePoint : MonoBehaviour
             DataManager.Instance.data.isSave[GameManager.Instance.stageIndex] = true;
             DataManager.Instance.data.savePoint = savePosition.position;
             Debug.Log("SavePoint Ãæµ¹!");
+            DataManager.Instance.SaveGameData();
         }
     }
 

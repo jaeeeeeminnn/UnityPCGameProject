@@ -71,7 +71,16 @@ public class PlayerController : MonoBehaviour
         // Portal Ctrl
         if (Input.GetKeyDown(KeyCode.UpArrow) && PortalManager.currentPortal != null)
         {
-            UIController.Instance.Fade("settingMap");
+            if (DataManager.Instance.data.isUnlock[PortalManager.currentPortal.portalCode] == true)
+            {
+                UIController.Instance.Fade("settingMap");
+            }
+
+            else
+            {
+                Debug.Log("스테이지 진입 불가");
+            }
+            //UIController.Instance.Fade("settingMap");
         }
     }
 
