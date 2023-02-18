@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
     {
         if(instance == null)
             instance = this;
+        DataManager.Instance.LoadGameData(); //테스트 코드
         CreatePortal();
         PlayerZeroPosition();
         isLobby = true;
