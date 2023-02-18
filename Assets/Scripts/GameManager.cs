@@ -38,6 +38,7 @@ public class GameManager : MonoBehaviour
         CreatePortal();
         PlayerZeroPosition();
         isLobby = true;
+        UIController.Instance.ResetStageInfo();
     }
 
     // Update is called once per frame

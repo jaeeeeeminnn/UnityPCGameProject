@@ -113,7 +113,7 @@ public class UIController : MonoBehaviour
 
     public void ResetStageInfo()
     {
-        stageInfo.text = "";
+        stageInfo.text = "Lobby";
     }
 
     public void NoticeRequried()
