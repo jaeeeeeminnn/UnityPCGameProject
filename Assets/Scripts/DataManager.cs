@@ -23,6 +23,7 @@ public class DataManager : MonoBehaviour
             return instance;
         }
     }
+    public static bool isLoadingData = false;
     //게임 데이터 파일이름 설정
     string GameDataFileName = "GameData.json";
     //저장용 클래스 변수
@@ -39,6 +40,7 @@ public class DataManager : MonoBehaviour
         {
             string FromJsonData = File.ReadAllText(filePath);
             data = JsonUtility.FromJson<Data>(FromJsonData);
+            isLoadingData = true;
             Debug.Log("불러오기 완료");
         }
     }
@@ -63,7 +65,7 @@ public class DataManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame

@@ -21,6 +21,7 @@ public class SceneLoad : MonoBehaviour
     void Start()
     {
         StartCoroutine(LoadSceneProcess());
+        DataManager.Instance.LoadGameData();
     }
     
     IEnumerator LoadSceneProcess()
@@ -44,13 +45,17 @@ public class SceneLoad : MonoBehaviour
                 progressbar.value = Mathf.Lerp(0.9f, 1f, timer);
                 if(progressbar.value >= 1f)
                 {
-                    loadtext.text = "Press SpaceBar";
-                    if (Input.GetKeyDown(KeyCode.Space))
+                    if(DataManager.isLoadingData)
                     {
-                        operation.allowSceneActivation = true;
-                        Time.timeScale = 1.0f;
-                        yield break;
+                        loadtext.text = "Press SpaceBar";
+                        if (Input.GetKeyDown(KeyCode.Space))
+                        {
+                            operation.allowSceneActivation = true;
+                            Time.timeScale = 1.0f;
+                            yield break;
+                        }
                     }
+                    
                     
                 }
             }
