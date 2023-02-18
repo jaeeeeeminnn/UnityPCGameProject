@@ -49402,7 +49402,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: To StartScreen
+  m_Text: Option
 --- !u!222 &2071666618
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -49582,7 +49582,7 @@ GameObject:
   - component: {fileID: 2118510799}
   - component: {fileID: 2118510798}
   m_Layer: 5
-  m_Name: To StartScreen Button
+  m_Name: Option Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -49652,17 +49652,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1792486989}
-        m_TargetAssemblyTypeName: SceneChange, Assembly-CSharp
-        m_MethodName: ToStartSceneChange
-        m_Mode: 1
+      - m_Target: {fileID: 1734891029}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &2118510799
 MonoBehaviour:
