@@ -14,7 +14,7 @@ public class UIController : MonoBehaviour
         }
     }
 
-    public GameObject inventory;
+    public GameObject quickSlots;
     public static string situation;
     public Text deadCount;
     public Text stageInfo;
@@ -49,7 +49,7 @@ public class UIController : MonoBehaviour
 
     IEnumerator FadeProcess(string _situation, Image _image)
     {
-        inventory.SetActive(false);
+        quickSlots.SetActive(false);
         if (_situation == "dead")
             yield return new WaitForSeconds(1f);
         _image.gameObject.SetActive(true);
@@ -91,7 +91,7 @@ public class UIController : MonoBehaviour
         }
 
         _image.gameObject.SetActive(false);
-        inventory.SetActive(true);
+        quickSlots.SetActive(true);
 
         yield return null;
     }

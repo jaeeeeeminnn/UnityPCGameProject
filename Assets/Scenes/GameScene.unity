@@ -14731,7 +14731,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 974e70b4482d8fe4787e4574f592cd35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: {fileID: 588135028}
+  quickSlots: {fileID: 588135028}
   deadCount: {fileID: 2079187939}
   stageInfo: {fileID: 342775227}
   Required: {fileID: 1431980609}
