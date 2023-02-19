@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour
     CapsuleCollider2D capsuleCollider;
     [SerializeField]
     private QuickSlotController quickSlot;
+    public GameObject holdingItem;
 
     private void Awake()
     {

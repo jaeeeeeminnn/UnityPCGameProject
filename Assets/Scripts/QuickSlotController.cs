@@ -10,12 +10,13 @@ public class QuickSlotController : MonoBehaviour
     private int selectedSlot;
     [SerializeField] private GameObject go_SelectedImage;
 
+    public SpriteRenderer playerHoldingItem;
     
     // Start is called before the first frame update
     void Start()
     {
         quickSlots = tf_parent.GetComponentsInChildren<Slot>();
-        selectedSlot = 0;
+        go_SelectedImage.SetActive(false);
     }
 
     // Update is called once per frame
@@ -27,15 +28,30 @@ public class QuickSlotController : MonoBehaviour
     private void TryInputNumber()
     {
         if(Input.GetKeyDown(KeyCode.Alpha1))
+        {
             ChangeSlot(0);
+            Excute(0);
+        }
         else if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
             ChangeSlot(1);
+            Excute(1);
+        }
         else if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
             ChangeSlot(2);
+            Excute(2);
+        }
         else if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
             ChangeSlot(3);
+            Excute(3);
+        }
         else if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
             ChangeSlot(4);
+            Excute(4);
+        }
     }
 
     private void ChangeSlot(int _num)
@@ -46,6 +62,8 @@ public class QuickSlotController : MonoBehaviour
 
     private void SelectedSlot(int _num)
     {
+        go_SelectedImage.SetActive(true);
+
         selectedSlot = _num;
 
         go_SelectedImage.transform.position = quickSlots[selectedSlot].transform.position;
@@ -108,6 +126,18 @@ public class QuickSlotController : MonoBehaviour
                 Debug.Log("Item 삭제 작업");
                 quickSlots[i].ClearSlot();
             }
+        }
+    }
+
+    public void Excute(int _num)
+    {
+        if(quickSlots[_num].item != null)
+        {
+            PlayerController.Instance.holdingItem.GetComponent<SpriteRenderer>().sprite = quickSlots[_num].item.itemImage;
+        }
+        else
+        {
+            PlayerController.Instance.holdingItem.GetComponent<SpriteRenderer>().sprite = null;
         }
     }
 }
