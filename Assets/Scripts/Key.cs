@@ -8,7 +8,7 @@ public class Key : MonoBehaviour
     public GameObject showPlatform;
 
     [SerializeField]
-    private Inventory theInventory;
+    private QuickSlotController quickSlot;
 
     // Start is called before the first frame update
     void Start()
@@ -27,7 +27,7 @@ public class Key : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         { 
             key.SetActive(false);
-            theInventory.AcquireItem(key.GetComponent<ItemPickup>().item);
+            quickSlot.AcquireItem(key.GetComponent<ItemPickup>().item);
 
             showPlatform.SetActive(true);
         }

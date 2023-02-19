@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
     Animator anim;
     CapsuleCollider2D capsuleCollider;
     [SerializeField]
-    private Inventory theInventory;
+    private QuickSlotController quickSlot;
 
     private void Awake()
     {
@@ -132,7 +132,7 @@ public class PlayerController : MonoBehaviour
         else if(collision.gameObject.tag == "Finish")
         {
             //Next Stage
-            if (theInventory.SearchItem("Key"))
+            if (quickSlot.SearchItem("Key"))
             {
                 gameManager.ClearStage();
                 Debug.Log("Stage Clear");

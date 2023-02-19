@@ -17,6 +17,8 @@ public class Slot : MonoBehaviour
     public Item item; //획득한 아이템
     public Image itemImage; //아이템 이미지
 
+    [SerializeField] 
+
     private void SetColor(float _alpha)
     {
         Color color = itemImage.color;

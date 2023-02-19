@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
 
     public int stageIndex; //StageCode
 
-    public Inventory theinventory; //Player Inventory
+    public QuickSlotController quickSlot; //Player Inventory
 
     public static bool isLobby;
     public GameObject lobby;
@@ -63,7 +63,7 @@ public class GameManager : MonoBehaviour
             CreatePortal();
             PlayerZeroPosition();
             UIController.Instance.ResetStageInfo();
-            theinventory.RemoveAllItem();
+            quickSlot.RemoveAllItem();
             DataManager.Instance.SaveGameData();
         }
         else

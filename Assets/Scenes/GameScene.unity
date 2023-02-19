@@ -14343,7 +14343,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 588135029}
-  - component: {fileID: 588135030}
+  - component: {fileID: 588135031}
   m_Layer: 5
   m_Name: items
   m_TagString: Untagged
@@ -14363,6 +14363,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1491264197}
+  - {fileID: 1339404767}
   m_Father: {fileID: 521772778}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -14371,7 +14372,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -376}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &588135030
+--- !u!114 &588135031
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -14380,10 +14381,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 588135028}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a117b74a8afcfbc43b78a330874de055, type: 3}
+  m_Script: {fileID: 11500000, guid: 0a5288de8ac7ff648af1486d7ffd1155, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  go_SlotsParent: {fileID: 1491264196}
+  quickSlots: []
+  tf_parent: {fileID: 1491264197}
+  go_SelectedImage: {fileID: 1339404766}
 --- !u!1 &626796274
 GameObject:
   m_ObjectHideFlags: 0
@@ -16020,13 +16023,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1782997497}
     - target: {fileID: 4310009669282798691, guid: 9d6f4878d113ae548910d9a6812e1c00, type: 3}
+      propertyPath: quickSlot
+      value: 
+      objectReference: {fileID: 588135031}
+    - target: {fileID: 4310009669282798691, guid: 9d6f4878d113ae548910d9a6812e1c00, type: 3}
       propertyPath: showPlatform
       value: 
       objectReference: {fileID: 1041718396}
     - target: {fileID: 4310009669282798691, guid: 9d6f4878d113ae548910d9a6812e1c00, type: 3}
       propertyPath: theInventory
       value: 
-      objectReference: {fileID: 588135030}
+      objectReference: {fileID: 0}
     - target: {fileID: 4310009669282798691, guid: 9d6f4878d113ae548910d9a6812e1c00, type: 3}
       propertyPath: movingPlatform
       value: 
@@ -22652,17 +22659,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1339404766}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1491264197}
-  m_RootOrder: 5
+  m_Father: {fileID: 588135029}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: -250, y: -75}
+  m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1339404768
 MonoBehaviour:
@@ -22684,7 +22691,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -3052007847286401427, guid: 5c17de84cefb2e64bb1ba3ab6a969ab9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -23377,7 +23384,6 @@ RectTransform:
   - {fileID: 517528434}
   - {fileID: 1870673169}
   - {fileID: 424292878}
-  - {fileID: 1339404767}
   m_Father: {fileID: 588135029}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -23442,7 +23448,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stageIndex: 0
-  theinventory: {fileID: 588135030}
+  quickSlot: {fileID: 588135031}
   lobby: {fileID: 212633715}
   Stages:
   - {fileID: 1391029029}
@@ -24865,7 +24871,7 @@ MonoBehaviour:
   gameManager: {fileID: 1497887750}
   maxSpeed: 4.5
   jumpPower: 20
-  theInventory: {fileID: 588135030}
+  quickSlot: {fileID: 588135031}
 --- !u!212 &1657534562
 SpriteRenderer:
   m_ObjectHideFlags: 0
