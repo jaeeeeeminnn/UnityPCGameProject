@@ -133,11 +133,13 @@ public class QuickSlotController : MonoBehaviour
     {
         if(quickSlots[_num].item != null)
         {
+            PlayerController.Instance.holdingItem.SetActive(true);
             PlayerController.Instance.holdingItem.GetComponent<SpriteRenderer>().sprite = quickSlots[_num].item.itemImage;
         }
         else
         {
-            PlayerController.Instance.holdingItem.GetComponent<SpriteRenderer>().sprite = null;
+            PlayerController.Instance.holdingItem.SetActive(false);
+            //PlayerController.Instance.holdingItem.GetComponent<SpriteRenderer>().sprite = null;
         }
     }
 }

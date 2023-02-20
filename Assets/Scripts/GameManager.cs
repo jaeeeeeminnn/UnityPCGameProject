@@ -37,7 +37,8 @@ public class GameManager : MonoBehaviour
         DataManager.Instance.LoadGameData(); //테스트 코드
         CreatePortal();
         PlayerZeroPosition();
-        isLobby = true;
+        //isLobby = true;
+        isLobby = false;
         UIController.Instance.ResetStageInfo();
     }
 

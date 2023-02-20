@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
         capsuleCollider = GetComponent<CapsuleCollider2D>();
-        
+        holdingItem.SetActive(false);
     }
 
     private void Update()
@@ -175,6 +175,7 @@ public class PlayerController : MonoBehaviour
         DataManager.Instance.SaveGameData();
 
         this.enabled = false; //플레이어가 사망 시 키입력으로 움직일 수 없게 함
+        holdingItem.SetActive(false);
         Debug.Log("죽었습니다!");
 
     }
@@ -182,6 +183,7 @@ public class PlayerController : MonoBehaviour
     public void PlayerReplaced()
     {
         this.enabled = true;
+        holdingItem.SetActive(true);
         spriteRenderer.flipY = false;
         capsuleCollider.enabled = true;
         spriteRenderer.color = new Color(1, 1, 1, 1);
