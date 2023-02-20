@@ -6336,7 +6336,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!156049354 &212633716
 Grid:
   m_ObjectHideFlags: 0
@@ -16109,11 +16109,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5137420141348195539, guid: 9d6f4878d113ae548910d9a6812e1c00, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 27.498
+      value: 10.6
       objectReference: {fileID: 0}
     - target: {fileID: 5137420141348195539, guid: 9d6f4878d113ae548910d9a6812e1c00, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -15.509
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5137420141348195539, guid: 9d6f4878d113ae548910d9a6812e1c00, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -23047,7 +23047,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1391029030
 Transform:
   m_ObjectHideFlags: 0
@@ -30862,9 +30862,9 @@ GameObject:
   - component: {fileID: 1686301938}
   - component: {fileID: 1686301939}
   - component: {fileID: 1686301940}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: Holding Item
-  m_TagString: Item
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
