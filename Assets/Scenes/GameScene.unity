@@ -311,10 +311,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 596618651}
   m_HandleRect: {fileID: 0}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 1
+  m_MinValue: 10
+  m_MaxValue: 30
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 10
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -25188,6 +25188,7 @@ GameObject:
   - component: {fileID: 1657534560}
   - component: {fileID: 1657534559}
   - component: {fileID: 1657534564}
+  - component: {fileID: 1657534565}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -25338,6 +25339,24 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1657534565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1657534558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e12bbf30dc565274eb9c8354edd080ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 0}
+  powerSlider: {fileID: 24231559}
+  p_slider: {fileID: 0}
+  minForce: 15
+  maxForce: 30
+  chargingTime: 0.75
 --- !u!1 &1671822152
 GameObject:
   m_ObjectHideFlags: 0
