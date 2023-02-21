@@ -8,6 +8,7 @@ public class QuickSlotController : MonoBehaviour
     [SerializeField] private Transform tf_parent;
 
     private int selectedSlot;
+    private int selectedSlotIndex = -1;
     [SerializeField] private GameObject go_SelectedImage;
 
     public SpriteRenderer playerHoldingItem;
@@ -29,35 +30,81 @@ public class QuickSlotController : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Alpha1))
         {
-            ChangeSlot(0);
-            Excute(0);
+            if(!isCheckedSelected(0))
+            {
+                ChangeSlot(0);
+                Excute(0);
+            }
+            else
+            {
+                go_SelectedImage.SetActive(false);
+                RemoveSelected();
+            }
+            
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            ChangeSlot(1);
-            Excute(1);
+            if (!isCheckedSelected(1))
+            {
+                ChangeSlot(1);
+                Excute(1);
+            }
+            else
+            {
+                go_SelectedImage.SetActive(false);
+                RemoveSelected();
+            }
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            ChangeSlot(2);
-            Excute(2);
+            if (!isCheckedSelected(2))
+            {
+                ChangeSlot(2);
+                Excute(2);
+            }
+            else
+            {
+                go_SelectedImage.SetActive(false);
+                RemoveSelected();
+            }
         }
         else if (Input.GetKeyDown(KeyCode.Alpha4))
         {
-            ChangeSlot(3);
-            Excute(3);
+            if (!isCheckedSelected(3))
+            {
+                ChangeSlot(3);
+                Excute(3);
+            }
+            else
+            {
+                go_SelectedImage.SetActive(false);
+                RemoveSelected();
+            }
         }
         else if (Input.GetKeyDown(KeyCode.Alpha5))
         {
-            ChangeSlot(4);
-            Excute(4);
+            if (!isCheckedSelected(4))
+            {
+                ChangeSlot(4);
+                Excute(4);
+            }
+            else
+            {
+                go_SelectedImage.SetActive(false);
+                RemoveSelected();
+            }
         }
     }
 
     private void ChangeSlot(int _num)
     {
         SelectedSlot(_num);
+    }
 
+    private void RemoveSelected()
+    {
+        selectedSlotIndex = -1;
+        PlayerController.Instance.holdingItem.SetActive(false);
     }
 
     private void SelectedSlot(int _num)
@@ -65,8 +112,17 @@ public class QuickSlotController : MonoBehaviour
         go_SelectedImage.SetActive(true);
 
         selectedSlot = _num;
+        selectedSlotIndex = _num;
+        
+        go_SelectedImage.transform.position = quickSlots[selectedSlotIndex].transform.position;
+    }
 
-        go_SelectedImage.transform.position = quickSlots[selectedSlot].transform.position;
+    private bool isCheckedSelected(int _selectedNum)
+    {
+        if (_selectedNum == selectedSlotIndex)
+            return true;
+        else
+            return false;
     }
 
     public void AcquireItem(Item _item)
