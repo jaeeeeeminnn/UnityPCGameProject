@@ -311,8 +311,8 @@ MonoBehaviour:
   m_FillRect: {fileID: 596618651}
   m_HandleRect: {fileID: 0}
   m_Direction: 0
-  m_MinValue: 10
-  m_MaxValue: 30
+  m_MinValue: 0
+  m_MaxValue: 10
   m_WholeNumbers: 0
   m_Value: 10
   m_OnValueChanged:
@@ -25353,10 +25353,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 0}
   powerSlider: {fileID: 24231559}
-  p_slider: {fileID: 0}
-  minForce: 15
-  maxForce: 30
-  chargingTime: 0.75
+  p_slider: {fileID: 24231561}
+  minForce: 10
+  maxForce: 20
+  chargingTime: 5
 --- !u!1 &1671822152
 GameObject:
   m_ObjectHideFlags: 0
