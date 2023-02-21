@@ -9,9 +9,9 @@ public class ItemShooter : MonoBehaviour
     public GameObject powerSlider;
     public Slider p_slider;
 
-    public float minForce = 10f;
-    public float maxForce = 20f;
-    public float chargingTime = 5f;
+    private float minForce = 0f;
+    private float maxForce = 10f;
+    private float chargingTime = 5f;
 
     private float currentForce;
     private float chargeSpeed;
@@ -29,25 +29,41 @@ public class ItemShooter : MonoBehaviour
         TryThrowItem();
     }
 
+    private void OnEnable()
+    {
+        currentForce = minForce;
+        p_slider.value = minForce;
+    }
+
     public void TryThrowItem()
     {
         p_slider.value = minForce;
 
-        if(Input.GetKey(KeyCode.LeftControl))
+        if(currentForce >= maxForce)
+        {
+            currentForce = maxForce;
+        }
+        else if(Input.GetKeyDown(KeyCode.LeftControl))
+        {
+            currentForce = minForce;
+        }
+        else if(Input.GetKey(KeyCode.LeftControl))
         {
             powerSlider.SetActive(true);
             currentForce = currentForce + chargingTime * Time.deltaTime;
+            Debug.Log(currentForce);
             p_slider.value = currentForce;
         }
         else if (Input.GetKeyUp(KeyCode.LeftControl))
         {
             Throw();
-            powerSlider.SetActive(false);
+            
         }
     }
 
     public void Throw()
     {
-        p_slider.value = minForce;
+        currentForce = minForce;
+        powerSlider.SetActive(false);
     }
 }
