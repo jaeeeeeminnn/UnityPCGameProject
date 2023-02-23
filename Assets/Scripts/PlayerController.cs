@@ -159,7 +159,9 @@ public class PlayerController : MonoBehaviour
         {
             deathPosition = this.transform.position;
         }
+
         quickSlot.RemoveSelected();
+        quickSlot.OffSelectedImage();
         //Sprite Alpha
         spriteRenderer.color = new Color(1, 1, 1, 0.4f);
         //Sprite Flip Y
@@ -175,7 +177,7 @@ public class PlayerController : MonoBehaviour
         DataManager.Instance.SaveGameData();
 
         this.enabled = false; //플레이어가 사망 시 키입력으로 움직일 수 없게 함
-        holdingItem.SetActive(false);
+        //holdingItem.SetActive(false);
         Debug.Log("죽었습니다!");
 
     }
@@ -183,7 +185,7 @@ public class PlayerController : MonoBehaviour
     public void PlayerReplaced()
     {
         this.enabled = true;
-        holdingItem.SetActive(true);
+        //holdingItem.SetActive(true);
         spriteRenderer.flipY = false;
         capsuleCollider.enabled = true;
         spriteRenderer.color = new Color(1, 1, 1, 1);

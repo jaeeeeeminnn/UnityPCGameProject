@@ -31,7 +31,7 @@ public class QuickSlotController : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Alpha1))
         {
-            if(!isCheckedSelected(0))
+            if(!IsCheckedSelected(0))
             {
                 ChangeSlot(0);
                 Excute(0);
@@ -45,7 +45,7 @@ public class QuickSlotController : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            if (!isCheckedSelected(1))
+            if (!IsCheckedSelected(1))
             {
                 ChangeSlot(1);
                 Excute(1);
@@ -58,7 +58,7 @@ public class QuickSlotController : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            if (!isCheckedSelected(2))
+            if (!IsCheckedSelected(2))
             {
                 ChangeSlot(2);
                 Excute(2);
@@ -71,7 +71,7 @@ public class QuickSlotController : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Alpha4))
         {
-            if (!isCheckedSelected(3))
+            if (!IsCheckedSelected(3))
             {
                 ChangeSlot(3);
                 Excute(3);
@@ -84,7 +84,7 @@ public class QuickSlotController : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Alpha5))
         {
-            if (!isCheckedSelected(4))
+            if (!IsCheckedSelected(4))
             {
                 ChangeSlot(4);
                 Excute(4);
@@ -118,12 +118,17 @@ public class QuickSlotController : MonoBehaviour
         go_SelectedImage.transform.position = quickSlots[selectedSlotIndex].transform.position;
     }
 
-    private bool isCheckedSelected(int _selectedNum)
+    private bool IsCheckedSelected(int _selectedNum)
     {
         if (_selectedNum == selectedSlotIndex)
             return true;
         else
             return false;
+    }
+
+    public void OffSelectedImage()
+    {
+        go_SelectedImage.SetActive(false);
     }
 
     public void AcquireItem(Item _item)
