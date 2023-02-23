@@ -159,7 +159,7 @@ public class PlayerController : MonoBehaviour
         {
             deathPosition = this.transform.position;
         }
-
+        quickSlot.RemoveSelected();
         //Sprite Alpha
         spriteRenderer.color = new Color(1, 1, 1, 0.4f);
         //Sprite Flip Y

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class QuickSlotController : MonoBehaviour
 {
+
     [SerializeField] private Slot[] quickSlots;
     [SerializeField] private Transform tf_parent;
 
@@ -101,7 +102,7 @@ public class QuickSlotController : MonoBehaviour
         SelectedSlot(_num);
     }
 
-    private void RemoveSelected()
+    public void RemoveSelected()
     {
         selectedSlotIndex = -1;
         PlayerController.Instance.holdingItem.SetActive(false);
