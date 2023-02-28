@@ -15,12 +15,14 @@ public class ItemShooter : MonoBehaviour
 
     private float currentForce;
     private float chargeSpeed;
+    private bool shoot;
 
     // Start is called before the first frame update
     void Start()
     {
         p_slider = powerSlider.GetComponent<Slider>();
         chargeSpeed = (maxForce - minForce) / chargingTime;
+        shoot = false;
     }
 
     // Update is called once per frame
@@ -37,11 +39,17 @@ public class ItemShooter : MonoBehaviour
 
     public void TryThrowItem()
     {
+        if(shoot == true)
+        {
+            return;
+        }
+
         p_slider.value = minForce;
 
-        if(currentForce >= maxForce)
+        if(currentForce >= maxForce && !shoot)
         {
             currentForce = maxForce;
+            Throw();
         }
         else if(Input.GetKeyDown(KeyCode.LeftControl))
         {
@@ -51,7 +59,7 @@ public class ItemShooter : MonoBehaviour
         {
             powerSlider.SetActive(true);
             currentForce = currentForce + chargingTime * Time.deltaTime;
-            Debug.Log(currentForce);
+            //Debug.Log(currentForce);
             p_slider.value = currentForce;
         }
         else if (Input.GetKeyUp(KeyCode.LeftControl))
@@ -63,6 +71,7 @@ public class ItemShooter : MonoBehaviour
 
     public void Throw()
     {
+        shoot = true;
         currentForce = minForce;
         powerSlider.SetActive(false);
     }
