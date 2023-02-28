@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private QuickSlotController quickSlot;
     public GameObject holdingItem;
+    public bool havingItem;
 
     private void Awake()
     {

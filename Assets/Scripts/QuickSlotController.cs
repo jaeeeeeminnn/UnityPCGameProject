@@ -106,6 +106,7 @@ public class QuickSlotController : MonoBehaviour
     {
         selectedSlotIndex = -1;
         PlayerController.Instance.holdingItem.SetActive(false);
+        PlayerController.Instance.havingItem = false;
     }
 
     private void SelectedSlot(int _num)
@@ -196,6 +197,7 @@ public class QuickSlotController : MonoBehaviour
         if(quickSlots[_num].item != null)
         {
             PlayerController.Instance.holdingItem.SetActive(true);
+            PlayerController.Instance.havingItem = true;
             PlayerController.Instance.holdingItem.GetComponent<SpriteRenderer>().sprite = quickSlots[_num].item.itemImage;
         }
         else
