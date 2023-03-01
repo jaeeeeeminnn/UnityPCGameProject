@@ -5,6 +5,7 @@ using UnityEngine;
 public class Stage1ObController : MonoBehaviour
 {
     public static EventBlock currentEvent;
+    public GameObject showingPlatform;
     public Rigidbody2D rigid;
     //public GameObject detectionArea; //첫번째 구역 trigger
 
@@ -21,8 +22,11 @@ public class Stage1ObController : MonoBehaviour
         {
             switch(currentEvent.type)
             {
-                case 0:
+                case 0: //떨어지는 장애물
                     DropOb();
+                    break;
+                case 1: //특정 행위를 취했을 때 새로운 Platform이 생기는 이벤트
+                    ShowPlatform();
                     break;
             }
         }
@@ -35,6 +39,11 @@ public class Stage1ObController : MonoBehaviour
     {
         rigid.gravityScale = 2.0f;
 
+    }
+
+    public void ShowPlatform()
+    {
+        showingPlatform.SetActive(true);
     }
 
     public void RemoveOb()

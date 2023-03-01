@@ -5,7 +5,6 @@ using UnityEngine;
 public class Key : MonoBehaviour
 {
     public GameObject key;
-    public GameObject showPlatform;
 
     [SerializeField]
     private QuickSlotController quickSlot;
@@ -28,8 +27,6 @@ public class Key : MonoBehaviour
         { 
             key.SetActive(false);
             quickSlot.AcquireItem(key.GetComponent<ItemPickup>().item);
-
-            showPlatform.SetActive(true);
         }
     }
 }
