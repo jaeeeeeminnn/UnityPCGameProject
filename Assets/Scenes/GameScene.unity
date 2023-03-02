@@ -25189,7 +25189,7 @@ GameObject:
   - component: {fileID: 1657534559}
   - component: {fileID: 1657534564}
   - component: {fileID: 1657534565}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -25352,7 +25352,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e12bbf30dc565274eb9c8354edd080ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 0}
+  item: {fileID: 1686301937}
+  rigid: {fileID: 0}
   powerSlider: {fileID: 24231559}
   p_slider: {fileID: 24231561}
 --- !u!1 &1671822152
@@ -31255,6 +31256,7 @@ GameObject:
   - component: {fileID: 1686301938}
   - component: {fileID: 1686301939}
   - component: {fileID: 1686301940}
+  - component: {fileID: 1686301941}
   m_Layer: 13
   m_Name: Holding Item
   m_TagString: Item
@@ -31353,6 +31355,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!50 &1686301941
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1686301937}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1689935053
 GameObject:
   m_ObjectHideFlags: 0

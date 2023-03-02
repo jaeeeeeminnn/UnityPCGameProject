@@ -4,7 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 public class ItemShooter : MonoBehaviour
 {
-    public Rigidbody2D item;
+    public GameObject item;
+
+    public Rigidbody2D rigid;
 
     public GameObject powerSlider;
     public Slider p_slider;
@@ -15,11 +17,12 @@ public class ItemShooter : MonoBehaviour
 
     private float currentForce;
     private float chargeSpeed;
-    //private bool shoot;
 
     // Start is called before the first frame update
     void Start()
     {
+        
+        rigid = item.GetComponent<Rigidbody2D>();
         p_slider = powerSlider.GetComponent<Slider>();
         chargeSpeed = (maxForce - minForce) / chargingTime;
         //p_slider.enabled = false;
@@ -38,7 +41,6 @@ public class ItemShooter : MonoBehaviour
     {
         currentForce = minForce;
         p_slider.value = minForce;
-        //shoot = false;
     }
 
     public void TryThrowItem()
@@ -58,8 +60,6 @@ public class ItemShooter : MonoBehaviour
         }
         else if(Input.GetKey(KeyCode.LeftControl))
         {
-            //powerSlider.SetActive(true);
-            //p_slider.enabled = true;
             currentForce = currentForce + chargingTime * Time.deltaTime;
             p_slider.value = currentForce;
         }
@@ -72,6 +72,8 @@ public class ItemShooter : MonoBehaviour
 
     public void Throw()
     {
+        //rigid.isKinematic = false;
+
         currentForce = minForce;
         p_slider.enabled = false;
         powerSlider.SetActive(false);
