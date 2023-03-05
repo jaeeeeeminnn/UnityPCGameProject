@@ -155,6 +155,11 @@ public class QuickSlotController : MonoBehaviour
 
     }
 
+    public void RemoveItem()
+    {
+        quickSlots[selectedSlot].ClearSlot();
+    }
+
     /// <summary>
     /// 인벤토리에 아이템 이름이 _name인 아이템을 찾는 함수
     /// </summary>

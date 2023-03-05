@@ -11,6 +11,7 @@ public class ItemShooter : MonoBehaviour
     public GameObject powerSlider;
     public Slider p_slider;
 
+
     private float minForce = 0f;
     private float maxForce = 10f;
     private float chargingTime = 5f;
@@ -73,6 +74,14 @@ public class ItemShooter : MonoBehaviour
     public void Throw()
     {
         //rigid.isKinematic = false;
+        //item.gameObject.transform.SetParent(null);
+        Instantiate(item);
+
+        PlayerController.Instance.havingItem = false;
+        PlayerController.Instance.quickSlot.RemoveItem();
+        item.SetActive(false);
+        PlayerController.Instance.quickSlot.OffSelectedImage();
+        PlayerController.Instance.quickSlot.RemoveSelected();
 
         currentForce = minForce;
         p_slider.enabled = false;

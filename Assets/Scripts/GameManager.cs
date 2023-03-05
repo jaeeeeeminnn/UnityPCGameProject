@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
         CreatePortal();
         PlayerZeroPosition();
         //isLobby = true;
-        isLobby = false;
+        isLobby = false; //전체 게임 테스트 시 isLobby = true로 진행할 것
         UIController.Instance.ResetStageInfo();
     }
 

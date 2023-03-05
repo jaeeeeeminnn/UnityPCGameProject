@@ -22,8 +22,8 @@ public class PlayerController : MonoBehaviour
     SpriteRenderer spriteRenderer;
     Animator anim;
     CapsuleCollider2D capsuleCollider;
-    [SerializeField]
-    private QuickSlotController quickSlot;
+    
+    public QuickSlotController quickSlot;
     public GameObject holdingItem;
     public bool havingItem;
 
@@ -106,7 +106,7 @@ public class PlayerController : MonoBehaviour
         if(rigid.velocity.y < 0)
         {
             Debug.DrawRay(rigid.position, Vector3.down, new Color(0, 1, 0));
-            RaycastHit2D rayHit = Physics2D.Raycast(rigid.position, Vector3.down, 1, LayerMask.GetMask("Platform"));
+            RaycastHit2D rayHit = Physics2D.Raycast(rigid.position, Vector3.down, 1, LayerMask.GetMask("Platform", "Item"));
             if (rayHit.collider != null)
             {
                 if (rayHit.distance < 3f)
