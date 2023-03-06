@@ -84,6 +84,8 @@ public class PlayerController : MonoBehaviour
             }
             //UIController.Instance.Fade("settingMap");
         }
+
+
     }
 
     private void FixedUpdate()

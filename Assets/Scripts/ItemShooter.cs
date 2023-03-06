@@ -4,10 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 public class ItemShooter : MonoBehaviour
 {
-    public GameObject item;
-
-    public Rigidbody2D rigid;
-
+    public GameObject holdingItem;
+    public Transform holdingItemPos;
+    
+    public GameObject throwItem;
+    public Rigidbody2D throwItemRigid;
+    public Transform throwItemPos;
+    
     public GameObject powerSlider;
     public Slider p_slider;
 
@@ -22,11 +25,8 @@ public class ItemShooter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
-        rigid = item.GetComponent<Rigidbody2D>();
         p_slider = powerSlider.GetComponent<Slider>();
         chargeSpeed = (maxForce - minForce) / chargingTime;
-        //p_slider.enabled = false;
     }
 
     // Update is called once per frame
@@ -73,18 +73,31 @@ public class ItemShooter : MonoBehaviour
 
     public void Throw()
     {
-        //rigid.isKinematic = false;
-        //item.gameObject.transform.SetParent(null);
-        Instantiate(item);
+        throwItem = Instantiate(holdingItem);
 
         PlayerController.Instance.havingItem = false;
         PlayerController.Instance.quickSlot.RemoveItem();
-        item.SetActive(false);
+        PlayerController.Instance.holdingItem.SetActive(false);
         PlayerController.Instance.quickSlot.OffSelectedImage();
         PlayerController.Instance.quickSlot.RemoveSelected();
+
+        //throwItemRigid.bodyType = RigidbodyType2D.Dynamic;
+
+
+        //throwItemRigid = throwItem.GetComponent<Rigidbody2D>();
+        //throwItemPos = throwItem.GetComponent<Transform>();
+        //throwItem.transform.SetParent(null);
+
+       
+
+        //throwItemRigid.AddForce(throwItemRigid.velocity);
 
         currentForce = minForce;
         p_slider.enabled = false;
         powerSlider.SetActive(false);
+
+        //throwItemRigid.velocity = currentForce * holdingItemPos.forward;
+
+        
     }
 }
