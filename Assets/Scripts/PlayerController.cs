@@ -18,7 +18,9 @@ public class PlayerController : MonoBehaviour
     public GameManager gameManager;
     public float maxSpeed;
     public float jumpPower;
+    Rigidbody2D holdingItemRigid;
     Rigidbody2D rigid;
+    
     SpriteRenderer spriteRenderer;
     Animator anim;
     CapsuleCollider2D capsuleCollider;
@@ -37,6 +39,7 @@ public class PlayerController : MonoBehaviour
         anim = GetComponent<Animator>();
         capsuleCollider = GetComponent<CapsuleCollider2D>();
         holdingItem.SetActive(false);
+        holdingItemRigid = holdingItem.GetComponent<Rigidbody2D>();
     }
 
     private void Update()
@@ -84,7 +87,6 @@ public class PlayerController : MonoBehaviour
             }
             //UIController.Instance.Fade("settingMap");
         }
-
 
     }
 

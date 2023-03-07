@@ -25316,6 +25316,7 @@ Transform:
   - {fileID: 519420032}
   - {fileID: 1686301938}
   - {fileID: 869102666}
+  - {fileID: 1691084355}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -25356,7 +25357,7 @@ MonoBehaviour:
   holdingItemPos: {fileID: 1686301938}
   throwItem: {fileID: 0}
   throwItemRigid: {fileID: 0}
-  throwItemPos: {fileID: 0}
+  throwPos: {fileID: 1691084355}
   powerSlider: {fileID: 24231559}
   p_slider: {fileID: 24231561}
 --- !u!1 &1671822152
@@ -31458,6 +31459,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1689935053}
   m_CullTransparentMesh: 1
+--- !u!1 &1691084354
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1691084355}
+  m_Layer: 10
+  m_Name: ThrowItemPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1691084355
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1691084354}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1657534563}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1712609497
 GameObject:
   m_ObjectHideFlags: 0
