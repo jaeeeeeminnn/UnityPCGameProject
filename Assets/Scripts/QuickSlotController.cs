@@ -14,6 +14,8 @@ public class QuickSlotController : MonoBehaviour
 
     public SpriteRenderer playerHoldingItem;
     
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -117,6 +119,12 @@ public class QuickSlotController : MonoBehaviour
         selectedSlotIndex = _num;
         
         go_SelectedImage.transform.position = quickSlots[selectedSlotIndex].transform.position;
+    }
+
+    public Item GetInfomationSelectedItem()
+    {
+        if (selectedSlotIndex == -1) return null;
+        else return quickSlots[selectedSlotIndex].item;
     }
 
     private bool IsCheckedSelected(int _selectedNum)

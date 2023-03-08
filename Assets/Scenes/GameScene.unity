@@ -6425,7 +6425,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!156049354 &212633716
 Grid:
   m_ObjectHideFlags: 0
@@ -15876,7 +15876,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1041718396}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: c19dc12e24d0c8140bb560c59442e4b9, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -22510,7 +22510,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1263978581}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: c19dc12e24d0c8140bb560c59442e4b9, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -23386,7 +23386,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1391029030
 Transform:
   m_ObjectHideFlags: 0
@@ -25353,8 +25353,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e12bbf30dc565274eb9c8354edd080ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  quickSlot: {fileID: 588135031}
   holdingItem: {fileID: 1686301937}
+  itemInfo: {fileID: 0}
   holdingItemPos: {fileID: 1686301938}
+  stageItem: {fileID: 192825029}
   throwItem: {fileID: 0}
   throwItemRigid: {fileID: 0}
   throwPos: {fileID: 1691084355}

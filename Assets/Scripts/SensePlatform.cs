@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SensePlatform : MonoBehaviour
 {
+    public static bool itemState;
 
     // Start is called before the first frame update
     void Start()
@@ -19,9 +20,14 @@ public class SensePlatform : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Platform")
+        if(this.gameObject.tag == "Enemy" && collision.gameObject.tag == "Platform")
         {
             Destroy(this.gameObject, 1f);
+        }
+
+        if(this.gameObject.tag == "Item" && collision.gameObject.tag == "Platform")
+        {
+            itemState = true;
         }
     }
 }

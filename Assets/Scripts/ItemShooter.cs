@@ -4,16 +4,19 @@ using UnityEngine;
 using UnityEngine.UI;
 public class ItemShooter : MonoBehaviour
 {
+    public QuickSlotController quickSlot;
+
     public GameObject holdingItem;
+    public Item itemInfo;
     public Transform holdingItemPos;
-    
+    public Transform stageItem;
+
     public GameObject throwItem;
     public Rigidbody2D throwItemRigid;
     public Transform throwPos;
     
     public GameObject powerSlider;
     public Slider p_slider;
-
 
     private float minForce = 0f;
     private float maxForce = 10f;
@@ -35,7 +38,7 @@ public class ItemShooter : MonoBehaviour
         if(PlayerController.Instance.havingItem == true)
         {
             TryThrowItem();
-        }
+        }  
     }
 
     private void OnEnable()
@@ -74,33 +77,41 @@ public class ItemShooter : MonoBehaviour
     public void Throw()
     {
         throwItem = Instantiate(holdingItem, throwPos.position, throwPos.rotation);
+        itemInfo = quickSlot.GetInfomationSelectedItem();
 
+        InitThrow();
+
+        p_slider.enabled = false;
+        powerSlider.SetActive(false);
+
+        SettingThrowItem();
+
+        throwItemRigid.velocity = currentForce * new Vector2(1,1);
+        throwItemRigid.AddForce(throwItemRigid.velocity);
+
+        currentForce = minForce;
+
+    }
+
+    public void SettingThrowItem()
+    {
+        throwItem.name = itemInfo.itemName;
+        throwItem.AddComponent<SensePlatform>();
+        
+
+        throwItemRigid = throwItem.GetComponent<Rigidbody2D>();
+        throwItem.transform.SetParent(stageItem.transform);
+
+        throwItemRigid.bodyType = RigidbodyType2D.Dynamic;
+
+    }
+
+    public void InitThrow()
+    {
         PlayerController.Instance.havingItem = false;
         PlayerController.Instance.quickSlot.RemoveItem();
         PlayerController.Instance.holdingItem.SetActive(false);
         PlayerController.Instance.quickSlot.OffSelectedImage();
         PlayerController.Instance.quickSlot.RemoveSelected();
-
-       
-
-
-        throwItemRigid = throwItem.GetComponent<Rigidbody2D>();
-        //throwItemPos = throwItem.GetComponent<Transform>();
-        //throwItem.transform.SetParent(null);
-
-        
-        p_slider.enabled = false;
-        powerSlider.SetActive(false);
-        throwItemRigid.bodyType = RigidbodyType2D.Dynamic;
-
-        throwItemRigid.velocity = currentForce * new Vector2(1,1);
-        throwItemRigid.AddForce(throwItemRigid.velocity);
-        Debug.Log(throwItemRigid.velocity);
-        Debug.Log(throwPos.forward);
-
-        currentForce = minForce;
-        
-
-
     }
 }
