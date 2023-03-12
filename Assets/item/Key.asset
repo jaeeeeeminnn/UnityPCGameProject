@@ -16,3 +16,4 @@ MonoBehaviour:
   itemType: 0
   itemImage: {fileID: -4873532191060881020, guid: 103eb63c1a2a35f47b6154c7e0666d56, type: 3}
   itemPrefab: {fileID: 7345637436975170398, guid: 9d6f4878d113ae548910d9a6812e1c00, type: 3}
+  trigger: {fileID: 2844081753269400982, guid: 9d6f4878d113ae548910d9a6812e1c00, type: 3}

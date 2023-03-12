@@ -78,6 +78,7 @@ public class ItemShooter : MonoBehaviour
     {
         throwItem = Instantiate(holdingItem, throwPos.position, throwPos.rotation);
         itemInfo = quickSlot.GetInfomationSelectedItem();
+        itemInfo.trigger.isTrigger = false;
 
         InitThrow();
 
@@ -103,6 +104,11 @@ public class ItemShooter : MonoBehaviour
         throwItem.transform.SetParent(stageItem.transform);
 
         throwItemRigid.bodyType = RigidbodyType2D.Dynamic;
+
+        if(SensePlatform.itemState)
+        {
+            itemInfo.trigger.isTrigger = true;
+        }
 
     }
 
