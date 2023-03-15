@@ -117,7 +117,9 @@ public class QuickSlotController : MonoBehaviour
 
         selectedSlot = _num;
         selectedSlotIndex = _num;
-        
+
+        //PlayerController.Instance.holdingItem = quickSlots[_num].gameObject;
+
         go_SelectedImage.transform.position = quickSlots[selectedSlotIndex].transform.position;
     }
 

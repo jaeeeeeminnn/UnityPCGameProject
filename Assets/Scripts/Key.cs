@@ -5,6 +5,7 @@ using UnityEngine;
 public class Key : MonoBehaviour
 {
     public GameObject key;
+    public Item itemInfo;
 
     [SerializeField]
     private QuickSlotController quickSlot;
@@ -12,13 +13,16 @@ public class Key : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        itemInfo = key.GetComponent<ItemPickup>().item;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(SensePlatform.itemState == true)
+        {
+            itemInfo.trigger.isTrigger = true;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
