@@ -3,25 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Item
-{
-    private static Item instance;
-    public static Item Instance
+{ 
+
+    static string[] itemNames =
     {
-        get
+        "Key"
+    };
+
+    static Sprite[] itemSprites;
+
+    public int itemCode;
+    public string itemName;
+    public Sprite itemSprite;
+
+    public Item(int _itemCode)
+    {
+        if(itemSprites == null)
         {
-            return instance;
+            itemSprites = Resources.LoadAll<Sprite>("Item");
+            Debug.Log(itemSprites.Length);
         }
-    }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        itemCode = _itemCode;
+        itemName = itemNames[_itemCode];
+        itemSprite = itemSprites[_itemCode];
     }
 }
