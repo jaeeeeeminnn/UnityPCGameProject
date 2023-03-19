@@ -21,7 +21,6 @@ public class Item
         if(itemSprites == null)
         {
             itemSprites = Resources.LoadAll<Sprite>("Item");
-            Debug.Log(itemSprites.Length);
         }
 
         itemCode = _itemCode;
