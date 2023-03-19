@@ -21,6 +21,12 @@ public class ItemObject : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        switch(itemCode)
+        {
+            case 0:
+                Stage1ObController.Instance.ShowPlatform();
+                break;
+        }
     }
+
 }

@@ -4,6 +4,15 @@ using UnityEngine;
 
 public class Stage1ObController : MonoBehaviour
 {
+    private static Stage1ObController instance;
+    public static Stage1ObController Instance
+    {
+        get
+        {
+            return instance;
+        }
+    }
+
     public static EventBlock currentEvent;
     public GameObject showingPlatform;
     public Rigidbody2D rigid;
@@ -12,7 +21,7 @@ public class Stage1ObController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        instance = this;
     }
 
     // Update is called once per frame
