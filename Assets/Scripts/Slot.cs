@@ -14,7 +14,7 @@ public class Slot : MonoBehaviour
         }
     }
 
-    public Item item; //획득한 아이템
+    //public Item item; //획득한 아이템
     public Image itemImage; //아이템 이미지
 
     [SerializeField] 
@@ -26,19 +26,19 @@ public class Slot : MonoBehaviour
         itemImage.color = color;
     }
 
-    public void AddItem(Item _item) //인벤토리에 아이템 추가
-    {
-        item = _item;
-        itemImage.sprite = item.itemImage;
-        SetColor(1);
-    }
+    //public void AddItem(Item _item) //인벤토리에 아이템 추가
+    //{
+    //    item = _item;
+    //    itemImage.sprite = item.itemImage;
+    //    SetColor(1);
+    //}
 
-    public void ClearSlot() //인벤토리에서 아이템 삭제
-    {
-        item = null;
-        itemImage.sprite = null;
-        SetColor(0);
-    }
+    //public void ClearSlot() //인벤토리에서 아이템 삭제
+    //{
+    //    item = null;
+    //    itemImage.sprite = null;
+    //    SetColor(0);
+    //}
 
     // Start is called before the first frame update
     void Start()

@@ -7,7 +7,7 @@ public class ItemShooter : MonoBehaviour
     public QuickSlotController quickSlot;
 
     public GameObject holdingItem;
-    public Item itemInfo;
+    //public Item itemInfo;
     public Transform holdingItemPos;
     public Transform stageItem;
 
@@ -54,7 +54,7 @@ public class ItemShooter : MonoBehaviour
         if(currentForce >= maxForce)
         {
             currentForce = maxForce;
-            Throw();
+            //Throw();
         }
         else if(Input.GetKeyDown(KeyCode.LeftControl))
         {
@@ -69,53 +69,53 @@ public class ItemShooter : MonoBehaviour
         }
         else if (Input.GetKeyUp(KeyCode.LeftControl))
         {
-            Throw();
+            //Throw();
             
         }
     }
 
-    public void Throw()
-    {
-        throwItem = Instantiate(holdingItem, throwPos.position, throwPos.rotation);
-        itemInfo = quickSlot.GetInfomationSelectedItem();
-        itemInfo.trigger.isTrigger = false;
+    //public void Throw()
+    //{
+    //    throwItem = Instantiate(holdingItem, throwPos.position, throwPos.rotation);
+    //    //itemInfo = quickSlot.GetInfomationSelectedItem();
+    //    //itemInfo.trigger.isTrigger = false;
 
-        InitThrow();
+    //    InitThrow();
 
-        p_slider.enabled = false;
-        powerSlider.SetActive(false);
+    //    p_slider.enabled = false;
+    //    powerSlider.SetActive(false);
 
-        SettingThrowItem();
+    //    SettingThrowItem();
 
-        throwItemRigid.velocity = currentForce * new Vector2(1,1);
-        throwItemRigid.AddForce(throwItemRigid.velocity);
+    //    throwItemRigid.velocity = currentForce * new Vector2(1,1);
+    //    throwItemRigid.AddForce(throwItemRigid.velocity);
 
-        currentForce = minForce;
+    //    currentForce = minForce;
 
-    }
+    //}
 
-    public void SettingThrowItem()
-    {
-        throwItem.name = itemInfo.itemName;
-        throwItem.AddComponent<SensePlatform>();
+    //public void SettingThrowItem()
+    //{
+    //    throwItem.name = itemInfo.itemName;
+    //    throwItem.AddComponent<SensePlatform>();
         
 
-        throwItemRigid = throwItem.GetComponent<Rigidbody2D>();
-        throwItem.transform.SetParent(stageItem.transform);
+    //    throwItemRigid = throwItem.GetComponent<Rigidbody2D>();
+    //    throwItem.transform.SetParent(stageItem.transform);
 
-        throwItemRigid.bodyType = RigidbodyType2D.Dynamic;
+    //    throwItemRigid.bodyType = RigidbodyType2D.Dynamic;
 
-        if(SensePlatform.itemState)
-        {
-            itemInfo.trigger.isTrigger = true;
-        }
+    //    if(SensePlatform.itemState)
+    //    {
+    //        itemInfo.trigger.isTrigger = true;
+    //    }
 
-    }
+    //}
 
     public void InitThrow()
     {
         PlayerController.Instance.havingItem = false;
-        PlayerController.Instance.quickSlot.RemoveItem();
+        //PlayerController.Instance.quickSlot.RemoveItem();
         PlayerController.Instance.holdingItem.SetActive(false);
         PlayerController.Instance.quickSlot.OffSelectedImage();
         PlayerController.Instance.quickSlot.RemoveSelected();
