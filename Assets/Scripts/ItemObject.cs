@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ItemObject : MonoBehaviour
 {
+    public QuickSlotController playerQuickSlot;
+
     public int itemCode;
     public SpriteRenderer spriteRenderer;
 
@@ -24,6 +26,8 @@ public class ItemObject : MonoBehaviour
         switch(itemCode)
         {
             case 0:
+                this.gameObject.SetActive(false);
+                playerQuickSlot.AcquireItem(0);
                 Stage1ObController.Instance.ShowPlatform();
                 break;
         }

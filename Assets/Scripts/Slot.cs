@@ -14,7 +14,7 @@ public class Slot : MonoBehaviour
         }
     }
 
-    //public Item item; //획득한 아이템
+    public Item item; //획득한 아이템
     public Image itemImage; //아이템 이미지
 
     [SerializeField] 
@@ -26,12 +26,12 @@ public class Slot : MonoBehaviour
         itemImage.color = color;
     }
 
-    //public void AddItem(Item _item) //인벤토리에 아이템 추가
-    //{
-    //    item = _item;
-    //    itemImage.sprite = item.itemImage;
-    //    SetColor(1);
-    //}
+    public void AddItem(int _itemCode) //인벤토리에 아이템 추가
+    {
+        item = DataPool.Instance.SearchItem(_itemCode);
+        itemImage.sprite = item.itemSprite;
+        SetColor(1);
+    }
 
     //public void ClearSlot() //인벤토리에서 아이템 삭제
     //{

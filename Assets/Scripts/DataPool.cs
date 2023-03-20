@@ -26,4 +26,9 @@ public class DataPool : MonoBehaviour
         }
     }
 
+    public Item SearchItem(int _itemCode)
+    {
+        return items[_itemCode];
+    }
+
 }

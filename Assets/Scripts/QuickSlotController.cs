@@ -26,78 +26,78 @@ public class QuickSlotController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //TryInputNumber();
+        TryInputNumber();
     }
 
-    //private void TryInputNumber()
-    //{
-    //    if(Input.GetKeyDown(KeyCode.Alpha1))
-    //    {
-    //        if(!IsCheckedSelected(0))
-    //        {
-    //            ChangeSlot(0);
-    //            Excute(0);
-    //        }
-    //        else
-    //        {
-    //            go_SelectedImage.SetActive(false);
-    //            RemoveSelected();
-    //        }
-            
-    //    }
-    //    else if (Input.GetKeyDown(KeyCode.Alpha2))
-    //    {
-    //        if (!IsCheckedSelected(1))
-    //        {
-    //            ChangeSlot(1);
-    //            Excute(1);
-    //        }
-    //        else
-    //        {
-    //            go_SelectedImage.SetActive(false);
-    //            RemoveSelected();
-    //        }
-    //    }
-    //    else if (Input.GetKeyDown(KeyCode.Alpha3))
-    //    {
-    //        if (!IsCheckedSelected(2))
-    //        {
-    //            ChangeSlot(2);
-    //            Excute(2);
-    //        }
-    //        else
-    //        {
-    //            go_SelectedImage.SetActive(false);
-    //            RemoveSelected();
-    //        }
-    //    }
-    //    else if (Input.GetKeyDown(KeyCode.Alpha4))
-    //    {
-    //        if (!IsCheckedSelected(3))
-    //        {
-    //            ChangeSlot(3);
-    //            Excute(3);
-    //        }
-    //        else
-    //        {
-    //            go_SelectedImage.SetActive(false);
-    //            RemoveSelected();
-    //        }
-    //    }
-    //    else if (Input.GetKeyDown(KeyCode.Alpha5))
-    //    {
-    //        if (!IsCheckedSelected(4))
-    //        {
-    //            ChangeSlot(4);
-    //            Excute(4);
-    //        }
-    //        else
-    //        {
-    //            go_SelectedImage.SetActive(false);
-    //            RemoveSelected();
-    //        }
-    //    }
-    //}
+    private void TryInputNumber()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            if (!IsCheckedSelected(0))
+            {
+                ChangeSlot(0);
+                //Excute(0);
+            }
+            else
+            {
+                go_SelectedImage.SetActive(false);
+                RemoveSelected();
+            }
+
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            if (!IsCheckedSelected(1))
+            {
+                ChangeSlot(1);
+                //Excute(1);
+            }
+            else
+            {
+                go_SelectedImage.SetActive(false);
+                RemoveSelected();
+            }
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            if (!IsCheckedSelected(2))
+            {
+                ChangeSlot(2);
+                //Excute(2);
+            }
+            else
+            {
+                go_SelectedImage.SetActive(false);
+                RemoveSelected();
+            }
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            if (!IsCheckedSelected(3))
+            {
+                ChangeSlot(3);
+                //Excute(3);
+            }
+            else
+            {
+                go_SelectedImage.SetActive(false);
+                RemoveSelected();
+            }
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
+            if (!IsCheckedSelected(4))
+            {
+                ChangeSlot(4);
+                //Excute(4);
+            }
+            else
+            {
+                go_SelectedImage.SetActive(false);
+                RemoveSelected();
+            }
+        }
+    }
 
     private void ChangeSlot(int _num)
     {
@@ -142,28 +142,30 @@ public class QuickSlotController : MonoBehaviour
         go_SelectedImage.SetActive(false);
     }
 
-    //public void AcquireItem(Item _item)
-    //{
-    //    for (int i = 0; i < quickSlots.Length; i++)
-    //    {
-    //        if (quickSlots[i].item != null)
-    //        {
-    //            quickSlots[i + 1].AddItem(_item);
-    //            break;
-    //        }
-    //        else
-    //        {
-    //            quickSlots[i].AddItem(_item);
-    //            break;
-    //        }
-    //    }
-    //    //Debug.Log("저장 전");
-    //    //DataManager.Instance.data.playerInventory = this;
-    //    //DataManager.Instance.SaveGameData();
+    public void AcquireItem(int _itemCode)
+    {
+        for (int i = 0; i < quickSlots.Length; i++)
+        {
+            if (quickSlots[i].item != null)
+            {
+                //quickSlots[i + 1].AddItem(_itemCode);
+                //Debug.Log(i + "번째 슬롯에 null이 아니므로 아이템이 추가되었습니다.");
+                break;
+            }
+            else
+            {
+                quickSlots[i].AddItem(_itemCode);
+                Debug.Log(i + "번째 슬롯에 null이므로 아이템이 추가되었습니다.");
+                break;
+            }
+        }
+        //Debug.Log("저장 전");
+        //DataManager.Instance.data.playerInventory = this;
+        //DataManager.Instance.SaveGameData();
 
-    //    return;
+        return;
 
-    //}
+    }
 
     //public void RemoveItem()
     //{
@@ -209,7 +211,7 @@ public class QuickSlotController : MonoBehaviour
 
     //public void Excute(int _num)
     //{
-    //    if(quickSlots[_num].item != null)
+    //    if (quickSlots[_num].item != null)
     //    {
     //        PlayerController.Instance.holdingItem.SetActive(true);
     //        PlayerController.Instance.havingItem = true;
