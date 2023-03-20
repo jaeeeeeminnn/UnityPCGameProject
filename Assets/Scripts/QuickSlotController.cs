@@ -146,17 +146,15 @@ public class QuickSlotController : MonoBehaviour
     {
         for (int i = 0; i < quickSlots.Length; i++)
         {
-            if (quickSlots[i].item != null)
+            if (quickSlots[i].item == null)
             {
-                //quickSlots[i + 1].AddItem(_itemCode);
-                //Debug.Log(i + "번째 슬롯에 null이 아니므로 아이템이 추가되었습니다.");
+                quickSlots[i].AddItem(_itemCode);
+                Debug.Log("아이템이 추가되었습니다.");
                 break;
             }
             else
             {
-                quickSlots[i].AddItem(_itemCode);
-                Debug.Log(i + "번째 슬롯에 null이므로 아이템이 추가되었습니다.");
-                break;
+                continue;
             }
         }
         //Debug.Log("저장 전");
