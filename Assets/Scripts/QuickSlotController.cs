@@ -39,7 +39,7 @@ public class QuickSlotController : MonoBehaviour
             if (!IsCheckedSelected(0))
             {
                 ChangeSlot(0);
-                //Excute(0);
+                Excute(0);
             }
             else
             {
@@ -110,7 +110,7 @@ public class QuickSlotController : MonoBehaviour
     public void RemoveSelected()
     {
         selectedSlotIndex = -1;
-        PlayerController.Instance.holdingItem.SetActive(false);
+        selectedItem.gameObject.SetActive(false);
         PlayerController.Instance.havingItem = false;
     }
 
@@ -121,6 +121,10 @@ public class QuickSlotController : MonoBehaviour
         selectedSlot = _num;
         selectedSlotIndex = _num;
 
+        selectedItem = PlayerController.Instance.pickupItem;
+        selectedItem.transform.SetParent(PlayerController.Instance.transform);
+        selectedItem.transform.position = PlayerController.Instance.holdPos.position;
+        selectedItem.GetComponent<BoxCollider2D>().isTrigger = false;
         //PlayerController.Instance.holdingItem = quickSlots[_num].gameObject;
 
         go_SelectedImage.transform.position = quickSlots[selectedSlotIndex].transform.position;
@@ -204,22 +208,19 @@ public class QuickSlotController : MonoBehaviour
         }
     }
 
-    //public void Excute(int _num)
-    //{
-    //    if (quickSlots[_num].item != null)
-    //    {
-    //        PlayerController.Instance.holdingItem.SetActive(true);
-    //        selectedItem.itemPosition = PlayerController.Instance.holdingItem.gameObject.transform.position;
-    //        Debug.Log(PlayerController.Instance.holdingItem.gameObject.transform.position);
-    //        selectedItem.gameObject.SetActive(true);
-            
-    //        PlayerController.Instance.havingItem = true;
-            
-    //    }
-    //    else
-    //    {
-    //        PlayerController.Instance.holdingItem.SetActive(false);
-    //        //PlayerController.Instance.holdingItem.GetComponent<SpriteRenderer>().sprite = null;
-    //    }
-    //}
+    public void Excute(int _num)
+    {
+        if (quickSlots[_num].item != null)
+        {
+            selectedItem.gameObject.SetActive(true);
+            //Debug.Log("Excute");
+            PlayerController.Instance.havingItem = true;
+
+        }
+        else
+        {
+            //PlayerController.Instance.holdingItem.SetActive(false);
+            //PlayerController.Instance.holdingItem.GetComponent<SpriteRenderer>().sprite = null;
+        }
+    }
 }

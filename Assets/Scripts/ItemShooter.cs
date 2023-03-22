@@ -6,10 +6,10 @@ public class ItemShooter : MonoBehaviour
 {
     public QuickSlotController quickSlot;
 
-    public GameObject holdingItem;
+    //public GameObject holdingItem;
     //public Item itemInfo;
-    public Transform holdingItemPos;
-    public Transform stageItem;
+    //public Transform holdingItemPos;
+    //public Transform stageItem;
 
     public GameObject throwItem;
     public Rigidbody2D throwItemRigid;
@@ -115,7 +115,7 @@ public class ItemShooter : MonoBehaviour
     {
         PlayerController.Instance.havingItem = false;
         //PlayerController.Instance.quickSlot.RemoveItem();
-        PlayerController.Instance.holdingItem.SetActive(false);
+        //PlayerController.Instance.holdingItem.SetActive(false);
         PlayerController.Instance.quickSlot.OffSelectedImage();
         PlayerController.Instance.quickSlot.RemoveSelected();
     }

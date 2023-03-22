@@ -29,9 +29,7 @@ public class ItemObject : MonoBehaviour
         {
             case 0:
                 PlayerController.Instance.pickupItem = this;
-                //playerQuickSlot.selectedItem = this;
                 this.gameObject.SetActive(false);
-                //playerQuickSlot.selectedItemPos = itemPosition;
                 playerQuickSlot.AcquireItem(0);
                 Stage1ObController.Instance.ShowPlatform();
                 break;
