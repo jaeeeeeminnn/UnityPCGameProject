@@ -74,31 +74,30 @@ public class ItemShooter : MonoBehaviour
         }
     }
 
-    //public void Throw()
-    //{
-    //    throwItem = Instantiate(holdingItem, throwPos.position, throwPos.rotation);
-    //    //itemInfo = quickSlot.GetInfomationSelectedItem();
-    //    //itemInfo.trigger.isTrigger = false;
+    public void Throw()
+    {
+        //throwItem = quickSlot.selectedItem;
+        //itemInfo.trigger.isTrigger = false;
 
-    //    InitThrow();
+        InitThrow();
 
-    //    p_slider.enabled = false;
-    //    powerSlider.SetActive(false);
+        p_slider.enabled = false;
+        powerSlider.SetActive(false);
 
-    //    SettingThrowItem();
+        //SettingThrowItem();
 
-    //    throwItemRigid.velocity = currentForce * new Vector2(1,1);
-    //    throwItemRigid.AddForce(throwItemRigid.velocity);
+        throwItemRigid.velocity = currentForce * new Vector2(1, 1);
+        throwItemRigid.AddForce(throwItemRigid.velocity);
 
-    //    currentForce = minForce;
+        currentForce = minForce;
 
-    //}
+    }
 
     //public void SettingThrowItem()
     //{
     //    throwItem.name = itemInfo.itemName;
     //    throwItem.AddComponent<SensePlatform>();
-        
+
 
     //    throwItemRigid = throwItem.GetComponent<Rigidbody2D>();
     //    throwItem.transform.SetParent(stageItem.transform);

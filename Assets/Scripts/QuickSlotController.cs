@@ -12,9 +12,12 @@ public class QuickSlotController : MonoBehaviour
     private int selectedSlotIndex = -1;
     [SerializeField] private GameObject go_SelectedImage;
 
-    public SpriteRenderer playerHoldingItem;
-    
+    //public ItemObject pickupItem;
 
+    public ItemObject selectedItem;
+    public Vector3 selectedItemPos;
+
+    public SpriteRenderer playerHoldingItem;
 
     // Start is called before the first frame update
     void Start()
@@ -123,12 +126,6 @@ public class QuickSlotController : MonoBehaviour
         go_SelectedImage.transform.position = quickSlots[selectedSlotIndex].transform.position;
     }
 
-    //public Item GetInfomationSelectedItem()
-    //{
-    //    if (selectedSlotIndex == -1) return null;
-    //    else return quickSlots[selectedSlotIndex].item;
-    //}
-
     private bool IsCheckedSelected(int _selectedNum)
     {
         if (_selectedNum == selectedSlotIndex)
@@ -165,10 +162,10 @@ public class QuickSlotController : MonoBehaviour
 
     }
 
-    //public void RemoveItem()
-    //{
-    //    quickSlots[selectedSlot].ClearSlot();
-    //}
+    public void RemoveItem()
+    {
+        quickSlots[selectedSlot].ClearSlot();
+    }
 
     /// <summary>
     /// 인벤토리에 아이템 이름이 _name인 아이템을 찾는 함수
@@ -195,25 +192,29 @@ public class QuickSlotController : MonoBehaviour
     /// <summary>
     /// 인벤토리의 모든 아이템을 삭제하는 함수
     /// </summary>
-    //public void RemoveAllItem()
-    //{
-    //    for (int i = 0; i < quickSlots.Length; i++)
-    //    {
-    //        if (quickSlots[i].item != null)
-    //        {
-    //            Debug.Log("Item 삭제 작업");
-    //            quickSlots[i].ClearSlot();
-    //        }
-    //    }
-    //}
+    public void RemoveAllItem()
+    {
+        for (int i = 0; i < quickSlots.Length; i++)
+        {
+            if (quickSlots[i].item != null)
+            {
+                Debug.Log("Item 삭제 작업");
+                quickSlots[i].ClearSlot();
+            }
+        }
+    }
 
     //public void Excute(int _num)
     //{
     //    if (quickSlots[_num].item != null)
     //    {
     //        PlayerController.Instance.holdingItem.SetActive(true);
+    //        selectedItem.itemPosition = PlayerController.Instance.holdingItem.gameObject.transform.position;
+    //        Debug.Log(PlayerController.Instance.holdingItem.gameObject.transform.position);
+    //        selectedItem.gameObject.SetActive(true);
+            
     //        PlayerController.Instance.havingItem = true;
-    //        PlayerController.Instance.holdingItem.GetComponent<SpriteRenderer>().sprite = quickSlots[_num].item.itemImage;
+            
     //    }
     //    else
     //    {

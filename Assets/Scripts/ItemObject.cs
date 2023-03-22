@@ -8,11 +8,13 @@ public class ItemObject : MonoBehaviour
 
     public int itemCode;
     public SpriteRenderer spriteRenderer;
+    public Vector3 itemPosition;
 
     // Start is called before the first frame update
     void Start()
     {
         spriteRenderer.sprite = DataPool.items[itemCode].itemSprite;
+        itemPosition = this.GetComponent<Transform>().position;
     }
 
     // Update is called once per frame
@@ -26,7 +28,10 @@ public class ItemObject : MonoBehaviour
         switch(itemCode)
         {
             case 0:
+                PlayerController.Instance.pickupItem = this;
+                //playerQuickSlot.selectedItem = this;
                 this.gameObject.SetActive(false);
+                //playerQuickSlot.selectedItemPos = itemPosition;
                 playerQuickSlot.AcquireItem(0);
                 Stage1ObController.Instance.ShowPlatform();
                 break;

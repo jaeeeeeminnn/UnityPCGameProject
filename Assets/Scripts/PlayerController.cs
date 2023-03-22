@@ -29,6 +29,8 @@ public class PlayerController : MonoBehaviour
     public GameObject holdingItem;
     public bool havingItem;
 
+    public ItemObject pickupItem;
+
     private void Awake()
     {
         if (instance == null)

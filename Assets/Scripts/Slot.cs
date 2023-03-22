@@ -33,12 +33,12 @@ public class Slot : MonoBehaviour
         SetColor(1);
     }
 
-    //public void ClearSlot() //인벤토리에서 아이템 삭제
-    //{
-    //    item = null;
-    //    itemImage.sprite = null;
-    //    SetColor(0);
-    //}
+    public void ClearSlot() //인벤토리에서 아이템 삭제
+    {
+        item = null;
+        itemImage.sprite = null;
+        SetColor(0);
+    }
 
     // Start is called before the first frame update
     void Start()
