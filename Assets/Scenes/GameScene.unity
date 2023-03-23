@@ -14214,7 +14214,6 @@ RectTransform:
   - {fileID: 1283202042}
   - {fileID: 1933319980}
   - {fileID: 342775225}
-  - {fileID: 588135029}
   - {fileID: 1431980610}
   - {fileID: 1734996491}
   m_Father: {fileID: 0}
@@ -14510,7 +14509,7 @@ GameObject:
   - component: {fileID: 588135029}
   - component: {fileID: 588135031}
   m_Layer: 5
-  m_Name: items
+  m_Name: QuickSlots
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14523,14 +14522,14 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 588135028}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1491264197}
   - {fileID: 1339404767}
-  m_Father: {fileID: 521772778}
-  m_RootOrder: 5
+  m_Father: {fileID: 869102666}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -15106,6 +15105,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 24231560}
+  - {fileID: 588135029}
   m_Father: {fileID: 1657534563}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -23516,7 +23516,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 521772778}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -25349,7 +25349,6 @@ Transform:
   - {fileID: 519420032}
   - {fileID: 1686301938}
   - {fileID: 869102666}
-  - {fileID: 1691084355}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -25389,7 +25388,7 @@ MonoBehaviour:
   quickSlot: {fileID: 588135031}
   throwItem: {fileID: 0}
   throwItemRigid: {fileID: 0}
-  throwPos: {fileID: 1691084355}
+  throwPos: {fileID: 0}
   powerSlider: {fileID: 24231559}
   p_slider: {fileID: 24231561}
 --- !u!1 &1671822152
@@ -31291,7 +31290,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1686301938}
   m_Layer: 13
-  m_Name: Holding Item
+  m_Name: Hold Pos
   m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31390,36 +31389,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1689935053}
   m_CullTransparentMesh: 1
---- !u!1 &1691084354
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1691084355}
-  m_Layer: 10
-  m_Name: ThrowItemPosition
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1691084355
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1691084354}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1657534563}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1712609497
 GameObject:
   m_ObjectHideFlags: 0
@@ -31708,7 +31677,7 @@ RectTransform:
   - {fileID: 218413552}
   - {fileID: 1155858650}
   m_Father: {fileID: 521772778}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}

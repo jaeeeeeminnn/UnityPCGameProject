@@ -53,7 +53,7 @@ public class QuickSlotController : MonoBehaviour
             if (!IsCheckedSelected(1))
             {
                 ChangeSlot(1);
-                //Excute(1);
+                Excute(1);
             }
             else
             {
@@ -66,7 +66,7 @@ public class QuickSlotController : MonoBehaviour
             if (!IsCheckedSelected(2))
             {
                 ChangeSlot(2);
-                //Excute(2);
+                Excute(2);
             }
             else
             {
@@ -79,7 +79,7 @@ public class QuickSlotController : MonoBehaviour
             if (!IsCheckedSelected(3))
             {
                 ChangeSlot(3);
-                //Excute(3);
+                Excute(3);
             }
             else
             {
@@ -92,7 +92,7 @@ public class QuickSlotController : MonoBehaviour
             if (!IsCheckedSelected(4))
             {
                 ChangeSlot(4);
-                //Excute(4);
+                Excute(4);
             }
             else
             {
