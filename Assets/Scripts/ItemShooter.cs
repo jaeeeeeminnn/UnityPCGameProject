@@ -11,9 +11,8 @@ public class ItemShooter : MonoBehaviour
     //public Transform holdingItemPos;
     //public Transform stageItem;
 
-    public GameObject throwItem;
+    public ItemObject throwItem;
     public Rigidbody2D throwItemRigid;
-    public Transform throwPos;
     
     public GameObject powerSlider;
     public Slider p_slider;
@@ -54,7 +53,7 @@ public class ItemShooter : MonoBehaviour
         if(currentForce >= maxForce)
         {
             currentForce = maxForce;
-            //Throw();
+            Throw();
         }
         else if(Input.GetKeyDown(KeyCode.LeftControl))
         {
@@ -69,14 +68,15 @@ public class ItemShooter : MonoBehaviour
         }
         else if (Input.GetKeyUp(KeyCode.LeftControl))
         {
-            //Throw();
+            Throw();
             
         }
     }
 
     public void Throw()
     {
-        //throwItem = quickSlot.selectedItem;
+        throwItem = quickSlot.selectedItem;
+        throwItemRigid = throwItem.GetComponent<Rigidbody2D>();
         //itemInfo.trigger.isTrigger = false;
 
         InitThrow();
@@ -85,6 +85,8 @@ public class ItemShooter : MonoBehaviour
         powerSlider.SetActive(false);
 
         //SettingThrowItem();
+
+        throwItemRigid.bodyType = RigidbodyType2D.Dynamic;
 
         throwItemRigid.velocity = currentForce * new Vector2(1, 1);
         throwItemRigid.AddForce(throwItemRigid.velocity);
@@ -104,7 +106,7 @@ public class ItemShooter : MonoBehaviour
 
     //    throwItemRigid.bodyType = RigidbodyType2D.Dynamic;
 
-    //    if(SensePlatform.itemState)
+    //    if (SensePlatform.itemState)
     //    {
     //        itemInfo.trigger.isTrigger = true;
     //    }
@@ -114,9 +116,8 @@ public class ItemShooter : MonoBehaviour
     public void InitThrow()
     {
         PlayerController.Instance.havingItem = false;
-        //PlayerController.Instance.quickSlot.RemoveItem();
-        //PlayerController.Instance.holdingItem.SetActive(false);
-        PlayerController.Instance.quickSlot.OffSelectedImage();
-        PlayerController.Instance.quickSlot.RemoveSelected();
+        quickSlot.RemoveItem();
+        quickSlot.OffSelectedImage();
+        //quickSlot.RemoveSelected();
     }
 }

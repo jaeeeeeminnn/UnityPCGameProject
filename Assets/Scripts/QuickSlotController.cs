@@ -125,7 +125,6 @@ public class QuickSlotController : MonoBehaviour
         selectedItem.transform.SetParent(PlayerController.Instance.transform);
         selectedItem.transform.position = PlayerController.Instance.holdPos.position;
         selectedItem.GetComponent<BoxCollider2D>().isTrigger = false;
-        //PlayerController.Instance.holdingItem = quickSlots[_num].gameObject;
 
         go_SelectedImage.transform.position = quickSlots[selectedSlotIndex].transform.position;
     }
@@ -213,7 +212,6 @@ public class QuickSlotController : MonoBehaviour
         if (quickSlots[_num].item != null)
         {
             selectedItem.gameObject.SetActive(true);
-            //Debug.Log("Excute");
             PlayerController.Instance.havingItem = true;
 
         }
