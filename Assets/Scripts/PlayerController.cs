@@ -156,7 +156,6 @@ public class PlayerController : MonoBehaviour
         else if(collision.gameObject.tag == "Item")
         {
             Debug.Log("Item È¹µæ");
-            //theInventory.AcquireItem(item);
         }
     }
 

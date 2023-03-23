@@ -25,15 +25,19 @@ public class ItemObject : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        switch(itemCode)
+        if(collision.gameObject.tag == "Player")
         {
-            case 0:
-                PlayerController.Instance.pickupItem = this;
-                this.gameObject.SetActive(false);
-                playerQuickSlot.AcquireItem(0);
-                Stage1ObController.Instance.ShowPlatform();
-                break;
+            switch (itemCode)
+            {
+                case 0:
+                    PlayerController.Instance.pickupItem = this;
+                    this.gameObject.SetActive(false);
+                    playerQuickSlot.AcquireItem(0);
+                    Stage1ObController.Instance.ShowPlatform();
+                    break;
+            }
         }
+        
     }
 
 }

@@ -84,34 +84,29 @@ public class ItemShooter : MonoBehaviour
         p_slider.enabled = false;
         powerSlider.SetActive(false);
 
-        //SettingThrowItem();
-
-        throwItemRigid.bodyType = RigidbodyType2D.Dynamic;
+        SettingThrowItem();
 
         throwItemRigid.velocity = currentForce * new Vector2(1, 1);
         throwItemRigid.AddForce(throwItemRigid.velocity);
 
         currentForce = minForce;
 
+        throwItem.transform.SetParent(GameManager.Instance.Stages[GameManager.Instance.stageIndex].transform);
     }
 
-    //public void SettingThrowItem()
-    //{
-    //    throwItem.name = itemInfo.itemName;
-    //    throwItem.AddComponent<SensePlatform>();
+    public void SettingThrowItem()
+    {
+        throwItem.gameObject.AddComponent<SensePlatform>();
 
+        throwItemRigid.bodyType = RigidbodyType2D.Dynamic;
 
-    //    throwItemRigid = throwItem.GetComponent<Rigidbody2D>();
-    //    throwItem.transform.SetParent(stageItem.transform);
+        if (SensePlatform.itemState)
+        {
+            throwItem.gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
+            
+        }
 
-    //    throwItemRigid.bodyType = RigidbodyType2D.Dynamic;
-
-    //    if (SensePlatform.itemState)
-    //    {
-    //        itemInfo.trigger.isTrigger = true;
-    //    }
-
-    //}
+    }
 
     public void InitThrow()
     {

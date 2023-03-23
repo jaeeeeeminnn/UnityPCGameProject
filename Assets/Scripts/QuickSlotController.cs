@@ -110,7 +110,10 @@ public class QuickSlotController : MonoBehaviour
     public void RemoveSelected()
     {
         selectedSlotIndex = -1;
-        selectedItem.gameObject.SetActive(false);
+        if(selectedItem)
+        {
+            selectedItem.gameObject.SetActive(false);
+        }
         PlayerController.Instance.havingItem = false;
     }
 

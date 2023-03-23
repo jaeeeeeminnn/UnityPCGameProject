@@ -16,6 +16,7 @@ public class Slot : MonoBehaviour
 
     public Item item; //획득한 아이템
     public Image itemImage; //아이템 이미지
+    public int itemCode;
 
     [SerializeField] 
 
@@ -30,6 +31,7 @@ public class Slot : MonoBehaviour
     {
         item = DataPool.Instance.SearchItem(_itemCode);
         itemImage.sprite = item.itemSprite;
+        itemCode = _itemCode;
         SetColor(1);
     }
 
