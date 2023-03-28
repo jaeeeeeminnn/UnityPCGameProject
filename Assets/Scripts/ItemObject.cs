@@ -13,6 +13,7 @@ public class ItemObject : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        playerQuickSlot = GameObject.Find("QuickSlots").GetComponent<QuickSlotController>();
         spriteRenderer.sprite = DataPool.items[itemCode].itemSprite;
         itemPosition = this.GetComponent<Transform>().position;
     }
