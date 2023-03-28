@@ -8,11 +8,12 @@ public class QuickSlotController : MonoBehaviour
     [SerializeField] private Slot[] quickSlots;
     [SerializeField] private Transform tf_parent;
 
-    private int selectedSlot;
+    public static int selectedSlot;
     private int selectedSlotIndex = -1;
     [SerializeField] private GameObject go_SelectedImage;
 
     //public ItemObject pickupItem;
+    public ItemObject throwItem;
 
     public ItemObject selectedItem;
     public Vector3 selectedItemPos;
@@ -125,8 +126,6 @@ public class QuickSlotController : MonoBehaviour
         selectedSlotIndex = _num;
 
         selectedItem = PlayerController.Instance.pickupItem;
-        selectedItem.transform.SetParent(PlayerController.Instance.transform);
-        selectedItem.transform.position = PlayerController.Instance.holdPos.position;
         selectedItem.GetComponent<BoxCollider2D>().isTrigger = false;
 
         go_SelectedImage.transform.position = quickSlots[selectedSlotIndex].transform.position;
@@ -214,8 +213,10 @@ public class QuickSlotController : MonoBehaviour
     {
         if (quickSlots[_num].item != null)
         {
-            selectedItem.gameObject.SetActive(true);
+            throwItem = Instantiate(DataPool.itemPrefabs[selectedItem.itemCode], PlayerController.Instance.holdPos).GetComponent<ItemObject>();
             PlayerController.Instance.havingItem = true;
+            throwItem.GetComponent<BoxCollider2D>().isTrigger = false;
+            throwItem.gameObject.AddComponent<SensePlatform>();
 
         }
         else

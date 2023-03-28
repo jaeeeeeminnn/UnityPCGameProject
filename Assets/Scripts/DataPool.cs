@@ -15,6 +15,9 @@ public class DataPool : MonoBehaviour
 
     public static int itemCount = 1;
     public static List<Item> items = new List<Item>();
+    public static int itemPrefabCount = 2;
+    public static List<GameObject> itemPrefabs = new List<GameObject>();
+    public static GameObject[] itemPrefab;
 
     private void Awake()
     {
@@ -24,6 +27,18 @@ public class DataPool : MonoBehaviour
         {
             items.Add(new Item(i));
         }
+
+        if(itemPrefab == null)
+        {
+            itemPrefab = Resources.LoadAll<GameObject>("Prefab");
+        }
+
+        for(int i=0;i<itemPrefabCount;i++)
+        {
+            itemPrefabs.Add(itemPrefab[i]);
+        }
+        Debug.Log(itemPrefabs.Count);
+
     }
 
     public Item SearchItem(int _itemCode)

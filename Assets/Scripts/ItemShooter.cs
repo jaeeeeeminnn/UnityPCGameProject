@@ -75,7 +75,8 @@ public class ItemShooter : MonoBehaviour
 
     public void Throw()
     {
-        throwItem = quickSlot.selectedItem;
+        throwItem = quickSlot.throwItem;
+
         throwItemRigid = throwItem.GetComponent<Rigidbody2D>();
         //itemInfo.trigger.isTrigger = false;
 
@@ -102,6 +103,7 @@ public class ItemShooter : MonoBehaviour
 
         if (SensePlatform.itemState)
         {
+            Debug.Log(SensePlatform.itemState);
             throwItem.gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
             
         }

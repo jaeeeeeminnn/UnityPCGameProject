@@ -14550,6 +14550,7 @@ MonoBehaviour:
   quickSlots: []
   tf_parent: {fileID: 1491264197}
   go_SelectedImage: {fileID: 1339404766}
+  throwItem: {fileID: 0}
   selectedItem: {fileID: 0}
   selectedItemPos: {x: 0, y: 0, z: 0}
   playerHoldingItem: {fileID: 0}
@@ -43141,7 +43142,8 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5025995635365769500, guid: c29f175ecfbfbe642afbe50b4f6cb5a5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c29f175ecfbfbe642afbe50b4f6cb5a5, type: 3}
 --- !u!1 &1928849689
 GameObject:
