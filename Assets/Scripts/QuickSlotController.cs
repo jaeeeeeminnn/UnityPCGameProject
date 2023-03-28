@@ -216,7 +216,6 @@ public class QuickSlotController : MonoBehaviour
             throwItem = Instantiate(DataPool.itemPrefabs[selectedItem.itemCode], PlayerController.Instance.holdPos).GetComponent<ItemObject>();
             PlayerController.Instance.havingItem = true;
             throwItem.GetComponent<BoxCollider2D>().isTrigger = false;
-            throwItem.gameObject.AddComponent<SensePlatform>();
 
         }
         else
