@@ -177,22 +177,21 @@ public class QuickSlotController : MonoBehaviour
     /// </summary>
     /// <param name="_name"></param>
     /// <returns></returns>
-    //public bool SearchItem(string _name)
-    //{
-    //    for (int i = 0; i < quickSlots.Length; i++)
-    //    {
-    //        if (quickSlots[i].item != null)
-    //        {
-    //            if (quickSlots[i].item.itemName == _name)
-    //            {
-    //                Debug.Log(quickSlots[i].item.name);
-    //                return true;
-    //            }
-    //        }
+    public bool SearchItem(int _itemCode)
+    {
+        for (int i = 0; i < quickSlots.Length; i++)
+        {
+            if (quickSlots[i].item != null)
+            {
+                if (quickSlots[i].itemCode == _itemCode)
+                {
+                    return true;
+                }
+            }
 
-    //    }
-    //    return false;
-    //}
+        }
+        return false;
+    }
 
     /// <summary>
     /// 인벤토리의 모든 아이템을 삭제하는 함수

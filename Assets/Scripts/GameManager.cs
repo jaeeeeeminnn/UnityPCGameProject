@@ -64,7 +64,7 @@ public class GameManager : MonoBehaviour
             CreatePortal();
             PlayerZeroPosition();
             UIController.Instance.ResetStageInfo();
-            //quickSlot.RemoveAllItem();
+            quickSlot.RemoveAllItem();
             DataManager.Instance.SaveGameData();
         }
         else

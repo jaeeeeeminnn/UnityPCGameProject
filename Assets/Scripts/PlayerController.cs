@@ -140,17 +140,17 @@ public class PlayerController : MonoBehaviour
         else if(collision.gameObject.tag == "Finish")
         {
             //Next Stage
-            //if (quickSlot.SearchItem("Key"))
-            //{
-            //    gameManager.ClearStage();
-            //    Debug.Log("Stage Clear");
-            //}
-            //else
-            //{
-            //    Debug.Log("클리어 실패!");
-            //    UIController.Instance.NoticeRequried();
-            //}
-            
+            if (quickSlot.SearchItem(0) == true)
+            {
+                gameManager.ClearStage();
+                Debug.Log("Stage Clear");
+            }
+            else
+            {
+                Debug.Log("클리어 실패!");
+                UIController.Instance.NoticeRequried();
+            }
+
         }
 
         else if(collision.gameObject.tag == "Item")
