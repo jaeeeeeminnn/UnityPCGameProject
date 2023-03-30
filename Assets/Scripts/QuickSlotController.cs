@@ -12,13 +12,10 @@ public class QuickSlotController : MonoBehaviour
     private int selectedSlotIndex = -1;
     [SerializeField] private GameObject go_SelectedImage;
 
-    //public ItemObject pickupItem;
     public ItemObject throwItem;
 
-    public ItemObject selectedItem;
-    public Vector3 selectedItemPos;
+    public Item selectedItem;
 
-    public SpriteRenderer playerHoldingItem;
 
     // Start is called before the first frame update
     void Start()
@@ -111,9 +108,10 @@ public class QuickSlotController : MonoBehaviour
     public void RemoveSelected()
     {
         selectedSlotIndex = -1;
-        if(selectedItem)
+        if(selectedItem != null)
         {
-            selectedItem.gameObject.SetActive(false);
+            //selectedItem.gameObject.SetActive(false);
+            throwItem.gameObject.SetActive(false);
         }
         PlayerController.Instance.havingItem = false;
     }
@@ -125,8 +123,9 @@ public class QuickSlotController : MonoBehaviour
         selectedSlot = _num;
         selectedSlotIndex = _num;
 
-        selectedItem = PlayerController.Instance.pickupItem;
-        selectedItem.GetComponent<BoxCollider2D>().isTrigger = false;
+
+        selectedItem = DataPool.Instance.SearchItem(selectedSlot);
+        //selectedItem.GetComponent<BoxCollider2D>().isTrigger = false;
 
         go_SelectedImage.transform.position = quickSlots[selectedSlotIndex].transform.position;
     }

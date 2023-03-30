@@ -37,7 +37,6 @@ public class DataPool : MonoBehaviour
         {
             itemPrefabs.Add(itemPrefab[i]);
         }
-        Debug.Log(itemPrefabs.Count);
 
     }
 

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ItemObject : MonoBehaviour
 {
-    public QuickSlotController playerQuickSlot;
+    private QuickSlotController playerQuickSlot;
 
     public int itemCode;
     public SpriteRenderer spriteRenderer;
@@ -33,9 +33,9 @@ public class ItemObject : MonoBehaviour
             switch (itemCode)
             {
                 case 0:
-                    PlayerController.Instance.pickupItem = this;
                     this.gameObject.SetActive(false);
                     playerQuickSlot.AcquireItem(0);
+                    //밑코드 맵 확장했을 때 재사용하려면 수정해야함
                     Stage1ObController.Instance.ShowPlatform();
                     break;
             }

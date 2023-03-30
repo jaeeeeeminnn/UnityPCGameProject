@@ -69,7 +69,7 @@ GameObject:
   - component: {fileID: 4175329876342190449}
   - component: {fileID: -5904159155391212827}
   - component: {fileID: 2278917599571780652}
-  - component: {fileID: 5025995635365769500}
+  - component: {fileID: 8309077827202719693}
   m_Layer: 0
   m_Name: item
   m_TagString: Item
@@ -102,7 +102,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -190,7 +190,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &5025995635365769500
+--- !u!114 &8309077827202719693
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -202,7 +202,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84d8d4dd2114e3a459b3e8b8f53585b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerQuickSlot: {fileID: 0}
   itemCode: 0
   spriteRenderer: {fileID: -5904159155391212827}
   itemPosition: {x: 0, y: 0, z: 0}

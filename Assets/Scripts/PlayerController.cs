@@ -29,8 +29,6 @@ public class PlayerController : MonoBehaviour
     public Transform holdPos;
     public bool havingItem;
 
-    public ItemObject pickupItem;
-
     private void Awake()
     {
         if (instance == null)
@@ -40,8 +38,6 @@ public class PlayerController : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
         capsuleCollider = GetComponent<CapsuleCollider2D>();
-        //holdingItem.SetActive(false);
-        //holdingItemRigid = holdingItem.GetComponent<Rigidbody2D>();
     }
 
     private void Update()
