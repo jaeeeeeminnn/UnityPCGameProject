@@ -9359,11 +9359,11 @@ MonoBehaviour:
   ui: {fileID: 856225717}
   stages:
   - {fileID: 1391029029}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1232602587}
+  - {fileID: 721551700}
+  - {fileID: 764231591}
+  - {fileID: 1448461531}
+  - {fileID: 1845255249}
   mainStages: {fileID: 212633715}
 --- !u!4 &387663559
 Transform:
@@ -11144,6 +11144,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &721551700 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6376584994171778746, guid: 608aac672993620499157f5ff3e102bc, type: 3}
+  m_PrefabInstance: {fileID: 1476506920}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &722601612
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11349,6 +11354,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 753496256}
   m_CullTransparentMesh: 1
+--- !u!1 &764231591 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6376584994171778746, guid: 608aac672993620499157f5ff3e102bc, type: 3}
+  m_PrefabInstance: {fileID: 1655378798}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &802470697
 GameObject:
   m_ObjectHideFlags: 0
@@ -13402,6 +13412,11 @@ Transform:
   m_Father: {fileID: 1401980111}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1232602587 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6376584994171778746, guid: 608aac672993620499157f5ff3e102bc, type: 3}
+  m_PrefabInstance: {fileID: 160645292}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1263978581
 GameObject:
   m_ObjectHideFlags: 0
@@ -14531,6 +14546,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1431980609}
   m_CullTransparentMesh: 1
+--- !u!1 &1448461531 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6376584994171778746, guid: 608aac672993620499157f5ff3e102bc, type: 3}
+  m_PrefabInstance: {fileID: 940058680}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1470920138
 GameObject:
   m_ObjectHideFlags: 0
@@ -24478,6 +24498,11 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1845255249 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6376584994171778746, guid: 608aac672993620499157f5ff3e102bc, type: 3}
+  m_PrefabInstance: {fileID: 722601612}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1870673168
 PrefabInstance:
   m_ObjectHideFlags: 0
