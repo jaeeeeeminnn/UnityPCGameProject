@@ -35,8 +35,6 @@ public class ItemObject : MonoBehaviour
                 case 0:
                     this.gameObject.SetActive(false);
                     playerQuickSlot.AcquireItem(0);
-                    //밑코드 맵 확장했을 때 재사용하려면 수정해야함
-                    Stage1ObController.Instance.ShowPlatform();
                     break;
             }
         }

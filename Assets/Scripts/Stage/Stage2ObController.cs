@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Stage1ObController : MonoBehaviour
+public class Stage2ObController : MonoBehaviour
 {
-    private static Stage1ObController instance;
-    public static Stage1ObController Instance
+    private static Stage2ObController instance;
+    public static Stage2ObController Instance
     {
         get
         {
@@ -27,9 +27,9 @@ public class Stage1ObController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(currentEvent != null)
+        if (currentEvent != null)
         {
-            switch(currentEvent.type)
+            switch (currentEvent.type)
             {
                 case 0: //떨어지는 장애물
                     DropOb();
@@ -53,16 +53,6 @@ public class Stage1ObController : MonoBehaviour
     public void ShowPlatform()
     {
         showingPlatform.SetActive(true);
-    }
-
-    public void RemoveOb()
-    {
-        
-    }
-
-    public void RegeneratoryOb()
-    {
-
     }
 
 }

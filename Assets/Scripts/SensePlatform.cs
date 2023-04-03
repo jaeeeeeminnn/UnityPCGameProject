@@ -22,5 +22,10 @@ public class SensePlatform : MonoBehaviour
         {
             Destroy(this.gameObject, 1f);
         }
+
+        if(this.gameObject.tag == "Player" && collision.gameObject.tag == "Platform")
+        {
+            Stage2ObController.currentEvent.type = 0;
+        }
     }
 }
