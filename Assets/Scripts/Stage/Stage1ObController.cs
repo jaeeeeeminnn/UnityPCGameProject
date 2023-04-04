@@ -16,12 +16,21 @@ public class Stage1ObController : MonoBehaviour
     public static EventBlock currentEvent;
     public GameObject showingPlatform;
     public Rigidbody2D rigid;
+
+    private GameObject parentEventBlocksPos;
+    private GameObject parentItemsPos;
+
+    public List<Vector3> eventBlocksPos = new List<Vector3>();
+    public List<Vector3> itemsPos = new List<Vector3>();
     //public GameObject detectionArea; //첫번째 구역 trigger
 
     // Start is called before the first frame update
     void Start()
     {
         instance = this;
+
+        parentEventBlocksPos = GameObject.Find("EventBlocks").gameObject;
+        parentItemsPos = GameObject.Find("items").gameObject;
     }
 
     // Update is called once per frame
@@ -55,4 +64,49 @@ public class Stage1ObController : MonoBehaviour
         showingPlatform.SetActive(true);
     }
 
+
+    // 이 밑부터 장애물 되돌리기 테스트
+    //public void findObject()
+    //{   
+    //    for(int i = 0; i< parentEventBlocksPos.transform.childCount; i++)
+    //    {
+    //        eventBlocksPos.Add(parentEventBlocksPos.transform.GetChild(i).position);
+
+    //        if(parentEventBlocksPos.transform.GetChild(i).gameObject.activeSelf == false)
+    //        {
+    //            parentEventBlocksPos.transform.GetChild(i).gameObject.SetActive(true);
+    //        }
+    //        else
+    //        {
+    //            parentEventBlocksPos.transform.GetChild(i).gameObject.SetActive(false);
+    //        }
+            
+            
+    //    }
+
+    //    for(int i = 0;i< parentItemsPos.transform.childCount;i++)
+    //    {
+    //        itemsPos.Add(parentItemsPos.transform.GetChild(i).position);
+
+    //        if (parentItemsPos.transform.GetChild(i).gameObject.activeSelf == false)
+    //        {
+    //            parentItemsPos.transform.GetChild(i).gameObject.SetActive(true);
+    //        }
+    //    }
+    //}
+
+    //public void GoBackOriginalPosition()
+    //{
+    //    findObject();
+
+    //    for(int i = 0; i < parentEventBlocksPos.transform.childCount; i++)
+    //    {
+    //        parentEventBlocksPos.transform.GetChild(i).gameObject.transform.position = eventBlocksPos[i];
+    //    }
+
+    //    for(int i = 0; i< parentItemsPos.transform.childCount; i++)
+    //    {
+    //        parentItemsPos.transform.GetChild(i).gameObject.transform.position = itemsPos[i];
+    //    }
+    //}
 }

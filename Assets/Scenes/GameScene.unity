@@ -2772,7 +2772,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6376584994171778746, guid: 608aac672993620499157f5ff3e102bc, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8471549721691575928, guid: 608aac672993620499157f5ff3e102bc, type: 3}
       propertyPath: m_Name
@@ -14399,7 +14399,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1391029030
 Transform:
   m_ObjectHideFlags: 0
@@ -25461,6 +25461,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   showingPlatform: {fileID: 1041718396}
   rigid: {fileID: 2062353416}
+  eventBlocksPos: []
+  itemsPos: []
 --- !u!1 &2005715059
 GameObject:
   m_ObjectHideFlags: 0

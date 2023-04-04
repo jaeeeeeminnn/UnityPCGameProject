@@ -175,12 +175,16 @@ public class PlayerController : MonoBehaviour
 
         UIController.Instance.Fade("dead"); //Fade 코루틴 호출
 
+        quickSlot.RemoveAllItem();
+
         DataManager.Instance.data.deathCount++;
         DataManager.Instance.SaveGameData();
 
         this.enabled = false; //플레이어가 사망 시 키입력으로 움직일 수 없게 함
-        //holdingItem.SetActive(false);
         Debug.Log("죽었습니다!");
+
+        //되돌리기 테스트
+        //Stage1ObController.Instance.GoBackOriginalPosition();
 
     }
 

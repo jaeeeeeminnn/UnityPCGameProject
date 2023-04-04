@@ -20,7 +20,8 @@ public class SensePlatform : MonoBehaviour
     {
         if(this.gameObject.tag == "Enemy" && collision.gameObject.tag == "Platform")
         {
-            Destroy(this.gameObject, 1f);
+            this.gameObject.SetActive(false);
+            //Destroy(this.gameObject, 1f);
         }
 
         if(this.gameObject.tag == "Player" && collision.gameObject.tag == "Platform")
